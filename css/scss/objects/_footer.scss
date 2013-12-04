@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+.footer {
+	clear: both;
+	overflow: hidden;
+	background: $red;
+	color: $creme-light;
+	line-height: 1.2;
+	text-align: center;
+
+	@media all and (min-width: $bp-med-2) {
+		text-align: left;
+	}
+
+
+	.lc {
+		padding: $pad $pad 0;
+	}
+
+	h4 {
+		font-size: $font-size-sm;
+		margin-bottom: $padpx-half;
+	}
+
+	a {
+		color: $gray-light;
+	}
+	
+	.left,
+	.right {
+		padding: $padpx-triple $padpx;
+		float:none;
+	}
+	.left {
+		border-bottom: 1px dashed $creme;
+
+		@media all and (min-width: $bp-med-2) {
+			float:left;
+			border-bottom: 0;
+		}
+	}
+	.right {
+		@media all and (min-width: $bp-med-2) {
+			float:right;
+		}
+	}
+
+	.nav-social {
+		padding: $padpx-half 0;
+	}
+
+	.bott {
+	    border-top: 1px solid $creme;
+
+	    .copyright {
+		    padding: $padpx $padpx 0;
+		    font-size: $font-size-sm;
+			
+			@media all and (min-width: $bp-med-2) {
+			    text-align: left;
+		    }
+	    }	
+	}	
+}

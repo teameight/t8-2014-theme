@@ -1,0 +1,30 @@
+/* Links */ 
+a {
+	color: $grey;
+	text-decoration: none;
+	outline: 0;
+	
+	&:hover, &:focus {
+		color: $red;
+	}
+}
+
+.nav-social a {
+	height:18px;
+	width: 18px;
+	display: inline-block;
+	background: $grey-light;
+	overflow: hidden;
+	text-indent: -999em;
+	border-radius: 50%;
+
+	&:hover, &:focus {
+		background: $grey;
+	}
+}
+.nav-social li {
+	height:18px;
+	width: 18px;
+	display: inline;
+	margin-right: $padpx-half;
+}

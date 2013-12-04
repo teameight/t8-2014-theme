@@ -1,0 +1,1868 @@
+/*                                                                                                                                         
+                                                ,,            ,,                          ,,                                             
+ .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
+,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88 
+`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || || 
+  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || || 
+.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `' 
+Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,, 
+P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db 
+                        MM                         6'     dP                                                                             
+                      .JMML.                       Ybmmmd'                                                                               
+
+Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
+You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
+So please don't use these styles. They're just here to put together the demo, and nothing more.
+They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
+
+So feel free to use any of these approaches. Or don't. It's totally up to you.
+
+*/
+/*------------------------------------*\
+    $TABLE OF CONTENTS 
+    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * VARIABLES..............................Declarations of Sass variables 
+ * .....Colors
+ * .....Typography
+ * .....Layout
+ * .....Defaults
+ * .....Breakpoints
+ * MIXINS.................................Sass mixins 
+ * RESET..................................Set reset defaults
+ * GLOBAL CLASSES.........................Set reset defaults
+ * GLOBAL ELEMENTS........................Establish global styles
+ * .....Main
+ * .....Headings
+ * .....Text-related elements (p, blockquote, lists)
+ * .....Defaults
+ * .....Breakpoints
+ * TYPOGRAPHY------------------------------
+ * MEDIA------------------------------
+ * LAYOUT------------------------------
+ * NAVIGATION------------------------------
+ * TOC To Be Continued
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+@font-face {
+  font-family: 'BlanchCon';
+  src: url("../fonts/blanchcon.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+/* Franklin Small font style
+	Usage: @include font-2-style();
+ */
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* line 6, scss/generic/_reset.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 11, scss/generic/_reset.scss */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, scss/generic/_reset.scss */
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+/* Clearfix */
+/* line 6, scss/base/_global-classes.scss */
+.cf, .l-two-col, #main {
+  *zoom: 1;
+}
+
+/* line 9, scss/base/_global-classes.scss */
+.cf:before, .l-two-col:before, #main:before, .cf:after, .l-two-col:after, #main:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 14, scss/base/_global-classes.scss */
+.cf:after, .l-two-col:after, #main:after {
+  clear: both;
+}
+
+/* line 18, scss/base/_global-classes.scss */
+.wrap {
+  max-width: 1020px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Completely remove from the flow and screen readers. */
+/* line 25, scss/base/_global-classes.scss */
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+/* line 31, scss/base/_global-classes.scss */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Floats */
+/* line 42, scss/base/_global-classes.scss */
+.right {
+  float: right;
+  padding: 0 0 1rem 1rem;
+}
+
+/* line 47, scss/base/_global-classes.scss */
+.right-search {
+  float: right;
+  padding: 0 0 1rem 0;
+}
+
+/* line 52, scss/base/_global-classes.scss */
+.left {
+  float: left;
+  padding: 0 1rem 1rem 0;
+}
+
+/* line 57, scss/base/_global-classes.scss */
+.bott {
+  clear: both;
+  padding: 1rem 0;
+}
+
+/* Text-Align */
+/* line 62, scss/base/_global-classes.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 66, scss/base/_global-classes.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 70, scss/base/_global-classes.scss */
+.align-left {
+  text-align: left;
+}
+
+/* Display Classes */
+@media all and (max-width: 28em) {
+  /* line 75, scss/base/_global-classes.scss */
+  .hide-small {
+    display: none;
+  }
+}
+
+@media all and (min-width: 28em) and (max-width: 45em) {
+  /* line 81, scss/base/_global-classes.scss */
+  .hide-med {
+    display: none;
+  }
+}
+
+@media all and (min-width: 45em) {
+  /* line 87, scss/base/_global-classes.scss */
+  .hide-large {
+    display: none;
+  }
+}
+
+/* line 94, scss/base/_global-classes.scss */
+.valid {
+  color: #089e00;
+}
+
+/* line 98, scss/base/_global-classes.scss */
+.error {
+  color: red;
+}
+
+/* line 1, scss/base/_main.scss */
+body {
+  background: #eae8d3;
+  font: 100%/1.5 "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  -webkit-text-size-adjust: 100%;
+  color: #6c6c71;
+}
+
+/* Links */
+/* line 2, scss/base/_links.scss */
+a {
+  color: #6c6c71;
+  text-decoration: none;
+  outline: 0;
+}
+/* line 7, scss/base/_links.scss */
+a:hover, a:focus {
+  color: #cb4627;
+}
+
+/* line 12, scss/base/_links.scss */
+.nav-social a {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background: #989898;
+  overflow: hidden;
+  text-indent: -999em;
+  border-radius: 50%;
+}
+/* line 21, scss/base/_links.scss */
+.nav-social a:hover, .nav-social a:focus {
+  background: #6c6c71;
+}
+
+/* line 25, scss/base/_links.scss */
+.nav-social li {
+  height: 18px;
+  width: 18px;
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+/* line 3, scss/base/_headings.scss */
+h1, .alpha {
+  line-height: 1.2;
+  font-family: "BlanchCon", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 3.25em;
+  color: white;
+  letter-spacing: .03em;
+}
+
+/* line 12, scss/base/_headings.scss */
+h2, .beta {
+  line-height: 1.2;
+  font-family: "BlanchCon", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 2.375em;
+  color: #cb4627;
+  letter-spacing: .03em;
+}
+
+/* line 21, scss/base/_headings.scss */
+h3, .gamma {
+  line-height: 1.2;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+/* line 26, scss/base/_headings.scss */
+h4, .delta {
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 1.125em;
+}
+
+/* Subheadings */
+/* line 40, scss/base/_headings.scss */
+.subheading {
+  font-family: "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 45, scss/base/_headings.scss */
+h5.subheading {
+  font-size: 1.75em;
+  color: white;
+  line-height: .9;
+  margin-top: 0.2em;
+}
+
+/* Text-Related Elements */
+/* line 2, scss/base/_text.scss */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Blockquote */
+/* line 7, scss/base/_text.scss */
+blockquote {
+  font-style: italic;
+  border-left: 1px solid gray;
+  color: gray;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Horizontal Rule */
+/* line 16, scss/base/_text.scss */
+hr {
+  border: 0;
+  height: 1px;
+  background: #cb4627;
+  margin: 2rem 0;
+}
+
+/* line 23, scss/base/_text.scss */
+abbr {
+  border-bottom: 1px dotted gray;
+  cursor: help;
+}
+
+/* line 1, scss/base/_lists.scss */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Definition Lists */
+/* line 8, scss/base/_lists.scss */
+dl {
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+
+/* line 13, scss/base/_lists.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 17, scss/base/_lists.scss */
+dd {
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+/* Flexible Media */
+/* line 6, scss/base/_media.scss */
+img, video, object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 11, scss/base/_media.scss */
+iframe {
+  margin-bottom: 1rem;
+}
+
+/* line 15, scss/base/_media.scss */
+figure {
+  margin-bottom: 1rem;
+}
+/* line 17, scss/base/_media.scss */
+figure img {
+  margin-bottom: 0.25rem;
+}
+
+/* line 21, scss/base/_media.scss */
+figcaption {
+  font-style: italic;
+}
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/* line 5, scss/base/_forms.scss */
+form > div {
+  margin-bottom: 1rem;
+}
+
+/* line 9, scss/base/_forms.scss */
+form ol, form ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* line 14, scss/base/_forms.scss */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 20, scss/base/_forms.scss */
+label {
+  display: block;
+  padding-bottom: 0.25rem;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 0.875em;
+  color: #6c6c71;
+}
+
+/* line 28, scss/base/_forms.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+/* line 34, scss/base/_forms.scss */
+input, textarea {
+  border: 0;
+  padding: 10px;
+  background: #f4f2e4;
+}
+
+/* line 40, scss/base/_forms.scss */
+input[type=text], input[type=search], input[type=url], input[type=number], textarea {
+  -webkit-appearance: none;
+}
+
+/* line 44, scss/base/_forms.scss */
+button, input[type="submit"] {
+  padding: 0.65rem;
+  background: #bdced3;
+  border: 0;
+  cursor: pointer;
+  color: #cb4627;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+/* line 54, scss/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 0.3em;
+}
+
+/* line 59, scss/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* line 65, scss/base/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 70, scss/base/_forms.scss */
+.field-container {
+  margin-bottom: 1rem;
+}
+
+/* line 76, scss/base/_forms.scss */
+.inline-form fieldset, .inline-form .inline-container {
+  position: relative;
+}
+/* line 80, scss/base/_forms.scss */
+.inline-form input {
+  height: 40px;
+  vertical-align: bottom;
+}
+/* line 85, scss/base/_forms.scss */
+.inline-form input[type=submit], .inline-form button, .inline-form .btn {
+  font-size: 0.875em;
+  padding: 10px;
+  background: #d1d1d4;
+  width: auto;
+  height: 40px;
+  vertical-align: bottom;
+}
+/* line 93, scss/base/_forms.scss */
+.inline-form input[type=submit]:hover, .inline-form input[type=submit]:focus, .inline-form button:hover, .inline-form button:focus, .inline-form .btn:hover, .inline-form .btn:focus {
+  background: #6c6c71;
+  color: white;
+}
+
+/* line 101, scss/base/_forms.scss */
+.inline-search-results-form {
+  width: 100%;
+}
+@media all and (min-width: 28em) {
+  /* line 101, scss/base/_forms.scss */
+  .inline-search-results-form {
+    width: 82%;
+  }
+}
+/* line 108, scss/base/_forms.scss */
+.inline-search-results-form fieldset, .inline-search-results-form .inline-container {
+  position: relative;
+}
+/* line 112, scss/base/_forms.scss */
+.inline-search-results-form input[type=submit], .inline-search-results-form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: auto;
+}
+
+/* Validation */
+/* line 122, scss/base/_forms.scss */
+.has-error {
+  border-color: red;
+}
+
+/* line 125, scss/base/_forms.scss */
+.is-valid {
+  border-color: #089e00;
+}
+
+/*------------------------------------*\
+    $SPECIFIC FORMS
+\*------------------------------------*/
+/* Search Form */
+/* line 137, scss/base/_forms.scss */
+.search-field {
+  padding-right: 3em;
+}
+
+/* line 140, scss/base/_forms.scss */
+.inline-form .search-submit {
+  background: none;
+  padding: 0.78em 1em;
+  border: 0;
+  border-left: 1px solid gray;
+  color: gray;
+}
+
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+/* line 4, scss/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+/* line 10, scss/base/_tables.scss */
+th {
+  text-align: left;
+  border: 1px solid gray;
+  padding: 0.2em;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 0.75em;
+}
+
+/* line 17, scss/base/_tables.scss */
+td {
+  border: 1px solid gray;
+  padding: 0.2em;
+}
+
+/* line 1, scss/base/_animation.scss */
+.animate-fade {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+/* line 4, scss/base/_animation.scss */
+.animate-fade:hover {
+  opacity: 0;
+}
+
+/* line 10, scss/base/_animation.scss */
+.animate-move > .demo-shape {
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/* Layout Container */
+/* line 6, scss/objects/_layout.scss */
+.lc, #main {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+/*------------------------------------*\
+    $TEMPLATES
+\*------------------------------------*/
+/* Two Column Layout */
+@media all and (min-width: 45em) {
+  /* line 20, scss/objects/_layout.scss */
+  .l-two-col .l-main {
+    float: left;
+    width: 70%;
+    padding-right: 1rem;
+  }
+}
+@media all and (max-width: 45em) {
+  /* line 28, scss/objects/_layout.scss */
+  .l-two-col .l-sidebar {
+    clear: both;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 28, scss/objects/_layout.scss */
+  .l-two-col .l-sidebar {
+    float: left;
+    width: 30%;
+    padding: 0 0 0 1rem;
+  }
+}
+
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/* Grid Container */
+/* line 47, scss/objects/_layout.scss */
+.g {
+  overflow: hidden;
+  margin: 40px 0;
+  padding: 40px 0.875%;
+  background: #f4f2e4;
+  overflow: visible;
+  position: relative;
+}
+@media all and (min-width: 24em) {
+  /* line 47, scss/objects/_layout.scss */
+  .g {
+    margin: 80px 0;
+  }
+}
+/* line 59, scss/objects/_layout.scss */
+.g > a {
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 0.875em;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* line 67, scss/objects/_layout.scss */
+.g.cont-wrap {
+  padding: 6.12% 2.05%;
+}
+/* line 71, scss/objects/_layout.scss */
+.g.cont-wrap > img,
+.g.cont-wrap > div {
+  margin-bottom: 2.12%;
+}
+
+/* line 76, scss/objects/_layout.scss */
+.g .ghead {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  left: 0;
+}
+
+/* Grid Item */
+/* line 84, scss/objects/_layout.scss */
+.gi {
+  padding: 0;
+  margin: 0 1% 2.12%;
+  position: relative;
+}
+/* line 89, scss/objects/_layout.scss */
+.gi img {
+  display: block;
+}
+@media all and (min-width: 28em) {
+  /* line 84, scss/objects/_layout.scss */
+  .gi {
+    float: left;
+  }
+}
+
+/* Grid 1up */
+/* line 100, scss/objects/_layout.scss */
+.g-1up .gi {
+  width: 100%;
+}
+
+/* Grid 2up */
+@media all and (min-width: 35em) {
+  /* line 107, scss/objects/_layout.scss */
+  .g-2up > .gi {
+    float: left;
+    width: 47.92%;
+  }
+  /* line 111, scss/objects/_layout.scss */
+  .g-2up > .gi:nth-of-type(odd) {
+    clear: left;
+  }
+}
+
+/* Grid Half (Always displayed side by side) */
+/* line 120, scss/objects/_layout.scss */
+.g-half > .gi {
+  float: left;
+  width: 50%;
+}
+/* line 124, scss/objects/_layout.scss */
+.g-half > .gi:nth-of-type(odd) {
+  clear: left;
+}
+
+/* Grid 3up */
+@media all and (min-width: 28em) {
+  /* line 133, scss/objects/_layout.scss */
+  .g-3up > .gi {
+    float: left;
+    width: 47.92%;
+  }
+  /* line 137, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 35em) {
+  /* line 144, scss/objects/_layout.scss */
+  .g-3up > .gi {
+    width: 31.25%;
+  }
+  /* line 147, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  /* line 151, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 4up */
+@media all and (min-width: 28em) {
+  /* line 161, scss/objects/_layout.scss */
+  .g-4up > .gi {
+    float: left;
+    width: 50%;
+  }
+  /* line 165, scss/objects/_layout.scss */
+  .g-4up > .gi:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 172, scss/objects/_layout.scss */
+  .g-4up > .gi {
+    width: 25%;
+  }
+  /* line 175, scss/objects/_layout.scss */
+  .g-4up > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  /* line 179, scss/objects/_layout.scss */
+  .g-4up > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+/* Grid Quarter (Always displayed side by side) */
+/* line 188, scss/objects/_layout.scss */
+.g-quarter > .gi {
+  float: left;
+  width: 24%;
+}
+/* line 192, scss/objects/_layout.scss */
+.g-quarter > .gi:nth-of-type(4n+1) {
+  clear: left;
+}
+
+@media all and (min-width: 29.75em) {
+  /* line 201, scss/objects/_layout.scss */
+  .g-max4 > .gi {
+    float: left;
+    width: 50%;
+  }
+  /* line 205, scss/objects/_layout.scss */
+  .g-max4 > .gi:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media all and (min-width: 39.8em) {
+  /* line 212, scss/objects/_layout.scss */
+  .g-max4 > .gi {
+    width: 33.3333333%;
+  }
+  /* line 215, scss/objects/_layout.scss */
+  .g-max4 > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  /* line 219, scss/objects/_layout.scss */
+  .g-max4 > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 226, scss/objects/_layout.scss */
+  .g-max4 > .gi {
+    width: 25%;
+  }
+  /* line 229, scss/objects/_layout.scss */
+  .g-max4 > .gi:nth-of-type(3n+1) {
+    clear: none;
+  }
+  /* line 233, scss/objects/_layout.scss */
+  .g-max4 > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 5up */
+/* line 243, scss/objects/_layout.scss */
+.g-max5 > .gi {
+  float: left;
+  width: 50%;
+}
+/* line 247, scss/objects/_layout.scss */
+.g-max5 > .gi:nth-of-type(2n+1) {
+  clear: both;
+}
+@media all and (min-width: 39.8em) {
+  /* line 253, scss/objects/_layout.scss */
+  .g-max5 > .gi {
+    width: 33.3333333%;
+  }
+  /* line 256, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  /* line 260, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 28em) {
+  /* line 267, scss/objects/_layout.scss */
+  .g-max5 > .gi {
+    width: 25%;
+  }
+  /* line 270, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(3n+1) {
+    clear: none;
+  }
+  /* line 274, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 35em) {
+  /* line 281, scss/objects/_layout.scss */
+  .g-max5 > .gi {
+    width: 20%;
+  }
+  /* line 284, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(4n+1) {
+    clear: none;
+  }
+  /* line 288, scss/objects/_layout.scss */
+  .g-max5 > .gi:nth-of-type(5n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 2/3 */
+@media all and (min-width: 28em) {
+  /* line 296, scss/objects/_layout.scss */
+  .gi-2-3 {
+    float: left;
+    width: 66.666666%;
+  }
+}
+
+@media all and (min-width: 28em) {
+  /* line 303, scss/objects/_layout.scss */
+  .gi-1-3 {
+    float: left;
+    width: 33.333333%;
+  }
+}
+
+/* Grid 4up block */
+/* line 312, scss/objects/_layout.scss */
+.g-opposites .gi {
+  float: left;
+}
+/* line 315, scss/objects/_layout.scss */
+.g-opposites .gi:last-child {
+  float: right;
+  text-align: right;
+}
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+/* line 1, scss/objects/_header.scss */
+.header {
+  background: #e4e2c6;
+  padding: 7px 0;
+  height: 50px;
+  overflow: visible;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* line 12, scss/objects/_header.scss */
+.logolink {
+  width: 35px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* line 18, scss/objects/_header.scss */
+.nav-toggle {
+  position: absolute;
+  display: block;
+  padding: 9px 0 9px 9px;
+  font-size: 1.3rem;
+  line-height: 1;
+  border-left: 1px solid #94a8ad;
+  right: 10px;
+  top: 0;
+}
+@media all and (min-width: 24em) {
+  /* line 18, scss/objects/_header.scss */
+  .nav-toggle {
+    right: 20px;
+  }
+}
+@media all and (min-width: 35em) {
+  /* line 18, scss/objects/_header.scss */
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* line 37, scss/objects/_header.scss */
+.search-form {
+  overflow: hidden;
+  max-height: 0;
+}
+@media all and (min-width: 35em) {
+  /* line 37, scss/objects/_header.scss */
+  .search-form {
+    float: right;
+    max-height: none;
+    margin: 0.65em 0.5em 0 0;
+  }
+}
+
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+/* line 5, scss/objects/_nav.scss */
+.nav-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  max-height: 0;
+}
+/* line 12, scss/objects/_nav.scss */
+.nav-menu a {
+  display: block;
+  padding: 20px 20px 4px 0;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  font-size: 0.75em;
+  color: #989898;
+}
+/* line 19, scss/objects/_nav.scss */
+.nav-menu a:hover, .nav-menu a:focus {
+  color: #cb4627;
+}
+/* line 24, scss/objects/_nav.scss */
+.nav-menu.active {
+  max-height: 40em;
+}
+@media all and (min-width: 35em) {
+  /* line 5, scss/objects/_nav.scss */
+  .nav-menu {
+    max-height: none;
+    float: right;
+    clear: none;
+  }
+  /* line 33, scss/objects/_nav.scss */
+  .nav-menu li {
+    float: left;
+  }
+  /* line 37, scss/objects/_nav.scss */
+  .nav-menu a {
+    border: 0;
+  }
+}
+
+/* line 45, scss/objects/_nav.scss */
+.pagination {
+  overflow: hidden;
+}
+/* line 48, scss/objects/_nav.scss */
+.pagination li {
+  float: left;
+  border-right: 1px solid #eeeeee;
+}
+/* line 52, scss/objects/_nav.scss */
+.pagination li:last-child {
+  border: 0;
+}
+/* line 57, scss/objects/_nav.scss */
+.pagination a {
+  padding: 20px;
+}
+
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+/* line 4, scss/objects/_main.scss */
+#main {
+  padding: 40px 10px;
+  overflow: hidden;
+}
+@media all and (min-width: 24em) {
+  /* line 4, scss/objects/_main.scss */
+  #main {
+    padding: 60px 20px;
+  }
+}
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+/* line 4, scss/objects/_footer.scss */
+.footer {
+  clear: both;
+  overflow: hidden;
+  background: #cb4627;
+  color: #eae8d3;
+  line-height: 1.2;
+  text-align: center;
+}
+@media all and (min-width: 35em) {
+  /* line 4, scss/objects/_footer.scss */
+  .footer {
+    text-align: left;
+  }
+}
+/* line 17, scss/objects/_footer.scss */
+.footer .lc, .footer #main {
+  padding: 1rem 1rem 0;
+}
+/* line 21, scss/objects/_footer.scss */
+.footer h4 {
+  font-size: 0.875em;
+  margin-bottom: 10px;
+}
+/* line 26, scss/objects/_footer.scss */
+.footer a {
+  color: #f9f9f9;
+}
+/* line 31, scss/objects/_footer.scss */
+.footer .left,
+.footer .right {
+  padding: 60px 20px;
+  float: none;
+}
+/* line 35, scss/objects/_footer.scss */
+.footer .left {
+  border-bottom: 1px dashed #e4e2c6;
+}
+@media all and (min-width: 35em) {
+  /* line 35, scss/objects/_footer.scss */
+  .footer .left {
+    float: left;
+    border-bottom: 0;
+  }
+}
+@media all and (min-width: 35em) {
+  /* line 43, scss/objects/_footer.scss */
+  .footer .right {
+    float: right;
+  }
+}
+/* line 49, scss/objects/_footer.scss */
+.footer .nav-social {
+  padding: 10px 0;
+}
+/* line 53, scss/objects/_footer.scss */
+.footer .bott {
+  border-top: 1px solid #e4e2c6;
+}
+/* line 56, scss/objects/_footer.scss */
+.footer .bott .copyright {
+  padding: 20px 20px 0;
+  font-size: 0.875em;
+}
+@media all and (min-width: 35em) {
+  /* line 56, scss/objects/_footer.scss */
+  .footer .bott .copyright {
+    text-align: left;
+  }
+}
+
+/*------------------------------------*\
+    $TEXT Styles
+\*------------------------------------*/
+/* Global Font Classes */
+/* line 2, scss/objects/_text.scss */
+.font-secondary {
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+}
+
+/* line 5, scss/objects/_text.scss */
+.font-tertiary {
+  font-family: "BlanchCon", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+}
+
+/* line 10, scss/objects/_text.scss */
+.ghead {
+  padding-left: 2.55%;
+  position: relative;
+  line-height: 1;
+  height: 38px;
+}
+
+/* line 16, scss/objects/_text.scss */
+.ghead:before {
+  background: #cb4627;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 13px;
+  left: 0;
+  content: '';
+}
+
+/* line 25, scss/objects/_text.scss */
+.ghead span {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 29, scss/objects/_text.scss */
+.ghead span:before {
+  background: #eae8d3;
+  height: 25px;
+  width: 100%;
+  padding: 0 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: -5px;
+}
+
+/* line 43, scss/objects/_text.scss */
+.intro {
+  font-size: 1.0625em;
+  font-weight: bold;
+}
+
+/* line 49, scss/objects/_text.scss */
+.pullquote {
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.4375em;
+}
+
+/* line 55, scss/objects/_text.scss */
+.text {
+  background: #e4e2c6;
+  padding: 20px;
+}
+@media all and (min-width: 24em) {
+  /* line 55, scss/objects/_text.scss */
+  .text {
+    padding: 40px;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 55, scss/objects/_text.scss */
+  .text {
+    padding: 9% 10% 7%;
+  }
+}
+/* line 67, scss/objects/_text.scss */
+.text a {
+  text-decoration: none;
+  color: #738d97;
+}
+/* line 71, scss/objects/_text.scss */
+.text a:hover, .text a:focus {
+  color: #cb4627;
+}
+/* line 76, scss/objects/_text.scss */
+.text ul {
+  list-style: disc;
+  margin: 0 0 1rem 1.2em;
+}
+/* line 80, scss/objects/_text.scss */
+.text ul ul {
+  margin-bottom: 0;
+}
+/* line 85, scss/objects/_text.scss */
+.text ol {
+  list-style: decimal;
+  margin: 0 0 1rem 1.2em;
+}
+/* line 89, scss/objects/_text.scss */
+.text ol ol {
+  margin-bottom: 0;
+}
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/* Icon Font */
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 15, scss/objects/_icons.scss */
+[data-icon]:before {
+  font-family: 'icons';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 24, scss/objects/_icons.scss */
+.icon-twitter:before, .icon-stumbleupon:before, .icon-pinterest:before, .icon-linkedin:before, .icon-google-plus:before, .icon-search:before, .icon-play:before, .icon-menu:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-bubble:before, .icon-facebook:before, .icon-feed:before, .icon-youtube:before, .icon-tag:before, .icon-tumblr:before, .icon-instagram, .icon-podcast, .icon-apple, .icon-android, .icon-arrow:after, .icon-envelope:before {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 34, scss/objects/_icons.scss */
+.icon-twitter:before {
+  content: "\74";
+}
+
+/* line 37, scss/objects/_icons.scss */
+.icon-stumbleupon:before {
+  content: "\75";
+}
+
+/* line 40, scss/objects/_icons.scss */
+.icon-pinterest:before {
+  content: "\70";
+}
+
+/* line 43, scss/objects/_icons.scss */
+.icon-linkedin:before {
+  content: "\69";
+}
+
+/* line 46, scss/objects/_icons.scss */
+.icon-google-plus:before {
+  content: "\67";
+}
+
+/* line 49, scss/objects/_icons.scss */
+.icon-search:before {
+  content: "\73";
+}
+
+/* line 52, scss/objects/_icons.scss */
+.icon-play:before {
+  content: "\61";
+}
+
+/* line 55, scss/objects/_icons.scss */
+.icon-menu:before {
+  content: "\21";
+}
+
+/* line 58, scss/objects/_icons.scss */
+.icon-arrow-left:before {
+  content: "\23";
+}
+
+/* line 61, scss/objects/_icons.scss */
+.icon-arrow-right:before {
+  content: "\24";
+}
+
+/* line 64, scss/objects/_icons.scss */
+.icon-bubble:before {
+  content: "\25";
+}
+
+/* line 67, scss/objects/_icons.scss */
+.icon-facebook:before {
+  content: "\66";
+}
+
+/* line 70, scss/objects/_icons.scss */
+.icon-feed:before {
+  content: "\27";
+}
+
+/* line 73, scss/objects/_icons.scss */
+.icon-youtube:before {
+  content: "\79";
+}
+
+/* line 76, scss/objects/_icons.scss */
+.icon-tag:before {
+  content: "\28";
+}
+
+/* line 79, scss/objects/_icons.scss */
+.icon-tumblr:before {
+  content: "\6d";
+}
+
+/* line 82, scss/objects/_icons.scss */
+.icon-instagram:before {
+  content: "\22";
+}
+
+/* line 85, scss/objects/_icons.scss */
+.icon-podcast:before {
+  content: "\26";
+}
+
+/* line 88, scss/objects/_icons.scss */
+.icon-android:before {
+  content: "\29";
+}
+
+/* line 91, scss/objects/_icons.scss */
+.icon-apple:before {
+  content: "\2a";
+}
+
+/* line 94, scss/objects/_icons.scss */
+.icon-envelope:before {
+  content: "\2b";
+}
+
+/* line 99, scss/objects/_icons.scss */
+.icon-arrow:after {
+  content: "\61";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 109, scss/objects/_icons.scss */
+.icon-play:before {
+  font-size: 0.7rem;
+  padding-left: 0.2em;
+}
+
+/* line 114, scss/objects/_icons.scss */
+.icon-play-box {
+  display: block;
+  margin-left: 2rem;
+}
+
+/* line 119, scss/objects/_icons.scss */
+.icon-play-box:before {
+  padding: 0.25rem;
+  background: gray;
+  color: white;
+  margin-left: -1.7rem;
+  margin-right: 0.5rem;
+}
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/* line 4, scss/objects/_buttons.scss */
+.btn {
+  display: inline-block;
+  background: #6c6c71;
+  color: #e4e2c6;
+  line-height: 1;
+  font-size: .75em;
+  padding: 0.75rem 0.65rem 0.5rem;
+  border: 0;
+  text-align: center;
+  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+/* line 15, scss/objects/_buttons.scss */
+.btn:hover, .btn:focus {
+  color: white;
+  background: #cb4627;
+}
+/* line 20, scss/objects/_buttons.scss */
+.btn.disabled {
+  background: #d1d1d4;
+  color: #bbbbbb;
+}
+
+/* line 26, scss/objects/_buttons.scss */
+.btn-small {
+  padding: 0.5rem;
+}
+
+/* line 30, scss/objects/_buttons.scss */
+.btn-large {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  background: gray;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+/* line 39, scss/objects/_buttons.scss */
+.text-btn {
+  font-style: italic;
+}
+
+/* Block */
+/* line 2, scss/objects/_blocks.scss */
+.block {
+  overflow: hidden;
+}
+/* line 5, scss/objects/_blocks.scss */
+.block p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 10, scss/objects/_blocks.scss */
+.headline {
+  line-height: 1.2;
+}
+
+/* Block Headline Summary */
+/* line 16, scss/objects/_blocks.scss */
+.block-headline-summary a {
+  display: block;
+  padding: 0.5rem;
+}
+
+/* Block Inset */
+/* line 23, scss/objects/_blocks.scss */
+.block-inset {
+  position: relative;
+}
+/* line 26, scss/objects/_blocks.scss */
+.block-inset .b-thumb {
+  position: relative;
+  z-index: 0;
+}
+/* line 30, scss/objects/_blocks.scss */
+.block-inset .b-thumb img {
+  display: block;
+}
+
+/* Title Card */
+/* line 37, scss/objects/_blocks.scss */
+.tcrd {
+  text-align: center;
+}
+@media all and (min-width: 45em) {
+  /* line 37, scss/objects/_blocks.scss */
+  .tcrd {
+    position: absolute;
+    left: 0;
+  }
+}
+/* line 46, scss/objects/_blocks.scss */
+.tcrd div {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  padding: 0 10%;
+  height: 3.6em;
+  margin-top: -1.3em;
+  zoom: 1;
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+@media all and (min-width: 45em) {
+  /* line 46, scss/objects/_blocks.scss */
+  .tcrd div {
+    position: absolute;
+  }
+}
+
+/* line 63, scss/objects/_blocks.scss */
+.title-card {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #94a8ad;
+  display: none;
+}
+@media all and (min-width: 35em) {
+  /* line 63, scss/objects/_blocks.scss */
+  .title-card {
+    font-size: 0.875em;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 63, scss/objects/_blocks.scss */
+  .title-card {
+    font-size: 1em;
+  }
+}
+/* line 83, scss/objects/_blocks.scss */
+.title-card h3 {
+  color: white;
+}
+
+/* line 87, scss/objects/_blocks.scss */
+.g-2up .title-card {
+  height: 50%;
+}
+/* line 90, scss/objects/_blocks.scss */
+.g-2up .title-card div {
+  width: 280px;
+  padding: 0;
+  margin-left: -140px;
+  left: 50%;
+  zoom: 1;
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+
+/* line 100, scss/objects/_blocks.scss */
+.gi:hover {
+  background: #94a8ad;
+}
+/* line 103, scss/objects/_blocks.scss */
+.gi:hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 109, scss/objects/_blocks.scss */
+.gi:hover .title-card {
+  display: block;
+}
+
+/* Post Title */
+/* line 115, scss/objects/_blocks.scss */
+.article-header.tcrd {
+  height: 100%;
+  background: #989898;
+}
+@media all and (min-width: 45em) {
+  /* line 115, scss/objects/_blocks.scss */
+  .article-header.tcrd {
+    width: 42.857%;
+    float: left;
+  }
+}
+/* line 124, scss/objects/_blocks.scss */
+.article-header.tcrd div {
+  height: auto;
+  margin-top: 0;
+  padding: 10%;
+}
+@media all and (min-width: 45em) {
+  /* line 124, scss/objects/_blocks.scss */
+  .article-header.tcrd div {
+    height: 6em;
+    margin-top: -3em;
+    padding: 0 10%;
+  }
+}
+/* line 136, scss/objects/_blocks.scss */
+.article-header.tcrd h2 {
+  color: white;
+}
+
+/* Post Content */
+@media all and (min-width: 45em) {
+  /* line 141, scss/objects/_blocks.scss */
+  .pcont {
+    width: 57.143%;
+    float: right;
+  }
+}
+
+/* line 148, scss/objects/_blocks.scss */
+.phead {
+  position: relative;
+}
+
+/* line 151, scss/objects/_blocks.scss */
+.imgdesc {
+  position: relative;
+  background: #e4e2c6;
+}
+/* line 155, scss/objects/_blocks.scss */
+.imgdesc > img {
+  width: 100%;
+}
+@media all and (min-width: 45em) {
+  /* line 155, scss/objects/_blocks.scss */
+  .imgdesc > img {
+    width: 57.143%;
+    float: left;
+  }
+}
+/* line 164, scss/objects/_blocks.scss */
+.imgdesc .desc {
+  width: 100%;
+}
+@media all and (min-width: 45em) {
+  /* line 164, scss/objects/_blocks.scss */
+  .imgdesc .desc {
+    height: 100%;
+    width: 42.857%;
+    float: left;
+  }
+}
+
+/* line 2, scss/objects/_lists.scss */
+.inline-list li {
+  display: inline-block;
+}
+
+/* Social List */
+/* line 9, scss/objects/_lists.scss */
+.social-list li {
+  margin: 0 0.4rem 1rem 0;
+}
+/* line 13, scss/objects/_lists.scss */
+.social-list a {
+  font-size: 1.6em;
+}
+
+/* Headline List */
+/* line 20, scss/objects/_lists.scss */
+.headline-list {
+  margin-bottom: 1rem;
+}
+/* line 23, scss/objects/_lists.scss */
+.headline-list.flush {
+  margin: 0;
+}
+/* line 27, scss/objects/_lists.scss */
+.headline-list h4 {
+  font-weight: normal;
+}
+/* line 31, scss/objects/_lists.scss */
+.headline-list li {
+  padding: 0.25rem 0;
+  border-top: 1px solid #dddddd;
+}
+
+/* Post List */
+/* line 39, scss/objects/_lists.scss */
+.post-list li {
+  margin-bottom: 1rem;
+}
+
+/* Bullet List */
+/* line 45, scss/objects/_lists.scss */
+.bullet-list {
+  list-style: square;
+  margin: 0 0 1em 1.2em;
+  line-height: 1.3;
+}
+/* line 50, scss/objects/_lists.scss */
+.bullet-list li {
+  margin-bottom: 1rem;
+}
+
+/* Text List */
+/* line 56, scss/objects/_lists.scss */
+.text-list {
+  margin: 0 0 1em;
+  line-height: 1.3;
+}
+/* line 60, scss/objects/_lists.scss */
+.text-list li {
+  margin-bottom: 1rem;
+}
+
+/* line 1, scss/objects/_sections.scss */
+.section {
+  margin: 40px 0;
+}
+@media all and (min-width: 28em) {
+  /* line 1, scss/objects/_sections.scss */
+  .section {
+    margin: 80px 0;
+  }
+}
+@media all and (min-width: 63.75em) {
+  /* line 1, scss/objects/_sections.scss */
+  .section {
+    max-width: 1020px;
+  }
+}
+
+/* line 12, scss/objects/_sections.scss */
+.section-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Home Main */
+/* line 17, scss/objects/_sections.scss */
+.section.home-main {
+  text-align: center;
+  margin: 120px 0 200px;
+}
+/* line 21, scss/objects/_sections.scss */
+.section.home-main > h1 {
+  color: #6c6c71;
+  font-size: 4em;
+}
+
+/* Team */
+/* line 28, scss/objects/_sections.scss */
+.section.team {
+  padding: 50px 3%;
+}
+/* line 31, scss/objects/_sections.scss */
+.section.team .team-member {
+  padding: 0;
+  margin: 0 0 20px;
+}
+@media all and (min-width: 28em) {
+  /* line 31, scss/objects/_sections.scss */
+  .section.team .team-member {
+    width: 50%;
+    float: left;
+  }
+}
+/* line 41, scss/objects/_sections.scss */
+.section.team .team-member img,
+.section.team .team-member .team-deets {
+  display: block;
+}
+@media all and (min-width: 28em) {
+  /* line 41, scss/objects/_sections.scss */
+  .section.team .team-member img,
+  .section.team .team-member .team-deets {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 45em) {
+  /* line 41, scss/objects/_sections.scss */
+  .section.team .team-member img,
+  .section.team .team-member .team-deets {
+    width: 300px;
+  }
+}
+/* line 53, scss/objects/_sections.scss */
+.section.team .team-member .team-deets {
+  background: #e4e2c6;
+  padding: 20px;
+  font-size: 0.875em;
+}
+/* line 58, scss/objects/_sections.scss */
+.section.team .team-member .team-deets .email {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+/* line 64, scss/objects/_sections.scss */
+.section.team .team-member .team-deets .nav-social {
+  float: right;
+  height: 18px;
+}
+/* line 68, scss/objects/_sections.scss */
+.section.team .team-member .team-deets .nav-social li {
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+/* line 2, scss/objects/_article.scss */
+.byline {
+  font-size: 0.875em;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Wordpress Caption */
+/* line 9, scss/objects/_article.scss */
+.wp-caption-text {
+  font-style: italic;
+}
+
+/* line 15, scss/objects/_article.scss */
+.review-summary .grade {
+  width: 4.5em;
+  float: left;
+  margin: 0 0.5rem 0 0;
+}
+/* line 21, scss/objects/_article.scss */
+.review-summary .summary-text {
+  margin-left: 5em;
+}

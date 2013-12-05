@@ -10,6 +10,11 @@ img, video, object {
 
 iframe {
 	margin-bottom: $space;
+
+}
+
+.single-format-video iframe {
+    width: 100%;
 }
 
 figure {

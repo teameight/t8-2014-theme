@@ -12,7 +12,7 @@ get_header(); ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'partials/content', get_post_format() ); ?>
+				<?php get_template_part( 'molecules/content', get_post_format() ); ?>
 
 			<?php endwhile; ?>
 

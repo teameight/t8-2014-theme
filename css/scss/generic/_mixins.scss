@@ -31,3 +31,11 @@
 	font-weight: 500;
 	letter-spacing: .08em;
 }
+
+/*   
+	@include background-opacity(#333, 0.5);
+*/
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}

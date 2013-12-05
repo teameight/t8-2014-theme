@@ -73,6 +73,9 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 /* Franklin Small font style
 	Usage: @include font-2-style();
  */
+/*   
+	@include background-opacity(#333, 0.5);
+*/
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
@@ -127,15 +130,20 @@ header, footer, nav, section, article, hgroup, figure {
   position: relative;
 }
 
+/* line 23, scss/base/_global-classes.scss */
+#page {
+  padding-top: 40px;
+}
+
 /* Completely remove from the flow and screen readers. */
-/* line 25, scss/base/_global-classes.scss */
+/* line 27, scss/base/_global-classes.scss */
 .is-hidden {
   display: none !important;
   visibility: hidden !important;
 }
 
 /* Completely remove from the flow but leave available to screen readers. */
-/* line 31, scss/base/_global-classes.scss */
+/* line 33, scss/base/_global-classes.scss */
 .is-vishidden {
   position: absolute !important;
   overflow: hidden;
@@ -147,74 +155,74 @@ header, footer, nav, section, article, hgroup, figure {
 }
 
 /* Floats */
-/* line 42, scss/base/_global-classes.scss */
+/* line 44, scss/base/_global-classes.scss */
 .right {
   float: right;
   padding: 0 0 1rem 1rem;
 }
 
-/* line 47, scss/base/_global-classes.scss */
+/* line 49, scss/base/_global-classes.scss */
 .right-search {
   float: right;
   padding: 0 0 1rem 0;
 }
 
-/* line 52, scss/base/_global-classes.scss */
+/* line 54, scss/base/_global-classes.scss */
 .left {
   float: left;
   padding: 0 1rem 1rem 0;
 }
 
-/* line 57, scss/base/_global-classes.scss */
+/* line 59, scss/base/_global-classes.scss */
 .bott {
   clear: both;
   padding: 1rem 0;
 }
 
 /* Text-Align */
-/* line 62, scss/base/_global-classes.scss */
+/* line 64, scss/base/_global-classes.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 66, scss/base/_global-classes.scss */
+/* line 68, scss/base/_global-classes.scss */
 .align-center {
   text-align: center;
 }
 
-/* line 70, scss/base/_global-classes.scss */
+/* line 72, scss/base/_global-classes.scss */
 .align-left {
   text-align: left;
 }
 
 /* Display Classes */
 @media all and (max-width: 28em) {
-  /* line 75, scss/base/_global-classes.scss */
+  /* line 77, scss/base/_global-classes.scss */
   .hide-small {
     display: none;
   }
 }
 
 @media all and (min-width: 28em) and (max-width: 45em) {
-  /* line 81, scss/base/_global-classes.scss */
+  /* line 83, scss/base/_global-classes.scss */
   .hide-med {
     display: none;
   }
 }
 
 @media all and (min-width: 45em) {
-  /* line 87, scss/base/_global-classes.scss */
+  /* line 89, scss/base/_global-classes.scss */
   .hide-large {
     display: none;
   }
 }
 
-/* line 94, scss/base/_global-classes.scss */
+/* line 96, scss/base/_global-classes.scss */
 .valid {
   color: #089e00;
 }
 
-/* line 98, scss/base/_global-classes.scss */
+/* line 100, scss/base/_global-classes.scss */
 .error {
   color: red;
 }
@@ -316,6 +324,7 @@ h5.subheading {
   color: white;
   line-height: .9;
   margin-top: 0.2em;
+  text-transform: lowercase;
 }
 
 /* Text-Related Elements */
@@ -1542,9 +1551,6 @@ td {
   padding: 0 10%;
   height: 3.6em;
   margin-top: -1.3em;
-  zoom: 1;
-  filter: alpha(opacity=90);
-  opacity: 0.9;
 }
 @media all and (min-width: 45em) {
   /* line 46, scss/objects/_blocks.scss */
@@ -1553,132 +1559,140 @@ td {
   }
 }
 
-/* line 63, scss/objects/_blocks.scss */
+/* line 60, scss/objects/_blocks.scss */
 .title-card {
   position: absolute;
+  overflow: hidden;
   left: 0;
   text-align: center;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 0;
   background: #94a8ad;
-  display: none;
+  /* The Fallback */
+  background: rgba(148, 168, 173, 0.9);
+  -webkit-transition: height 400ms ease;
+  -moz-transition: height 400ms ease;
+  -o-transition: height 400ms ease;
+  transition: height 400ms ease;
 }
 @media all and (min-width: 35em) {
-  /* line 63, scss/objects/_blocks.scss */
+  /* line 60, scss/objects/_blocks.scss */
   .title-card {
     font-size: 0.875em;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 63, scss/objects/_blocks.scss */
+  /* line 60, scss/objects/_blocks.scss */
   .title-card {
     font-size: 1em;
   }
 }
-/* line 83, scss/objects/_blocks.scss */
+/* line 84, scss/objects/_blocks.scss */
 .title-card h3 {
   color: white;
 }
 
-/* line 87, scss/objects/_blocks.scss */
-.g-2up .title-card {
-  height: 50%;
-}
 /* line 90, scss/objects/_blocks.scss */
 .g-2up .title-card div {
   width: 280px;
   padding: 0;
   margin-left: -140px;
   left: 50%;
-  zoom: 1;
-  filter: alpha(opacity=90);
-  opacity: 0.9;
+}
+
+/* line 97, scss/objects/_blocks.scss */
+.g-3up .gi:hover .title-card {
+  height: 100%;
 }
 
 /* line 100, scss/objects/_blocks.scss */
-.gi:hover {
+.g-2up .gi:hover {
   background: #94a8ad;
 }
 /* line 103, scss/objects/_blocks.scss */
-.gi:hover img {
-  zoom: 1;
-  filter: alpha(opacity=50);
-  opacity: 0.5;
+.g-2up .gi:hover .title-card {
+  height: 50%;
 }
-/* line 109, scss/objects/_blocks.scss */
-.gi:hover .title-card {
-  display: block;
+/* line 107, scss/objects/_blocks.scss */
+.g-2up .gi:hover img {
+  zoom: 1;
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+  -webkit-transition: opacity 200ms ease;
+  -moz-transition: opacity 200ms ease;
+  -o-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
 }
 
 /* Post Title */
-/* line 115, scss/objects/_blocks.scss */
+/* line 119, scss/objects/_blocks.scss */
 .article-header.tcrd {
   height: 100%;
   background: #989898;
 }
 @media all and (min-width: 45em) {
-  /* line 115, scss/objects/_blocks.scss */
+  /* line 119, scss/objects/_blocks.scss */
   .article-header.tcrd {
     width: 42.857%;
     float: left;
   }
 }
-/* line 124, scss/objects/_blocks.scss */
+/* line 128, scss/objects/_blocks.scss */
 .article-header.tcrd div {
   height: auto;
   margin-top: 0;
   padding: 10%;
 }
 @media all and (min-width: 45em) {
-  /* line 124, scss/objects/_blocks.scss */
+  /* line 128, scss/objects/_blocks.scss */
   .article-header.tcrd div {
     height: 6em;
     margin-top: -3em;
     padding: 0 10%;
   }
 }
-/* line 136, scss/objects/_blocks.scss */
+/* line 140, scss/objects/_blocks.scss */
 .article-header.tcrd h2 {
   color: white;
 }
 
 /* Post Content */
 @media all and (min-width: 45em) {
-  /* line 141, scss/objects/_blocks.scss */
+  /* line 145, scss/objects/_blocks.scss */
   .pcont {
     width: 57.143%;
     float: right;
   }
 }
 
-/* line 148, scss/objects/_blocks.scss */
+/* line 152, scss/objects/_blocks.scss */
 .phead {
   position: relative;
 }
 
-/* line 151, scss/objects/_blocks.scss */
+/* line 155, scss/objects/_blocks.scss */
 .imgdesc {
   position: relative;
   background: #e4e2c6;
 }
-/* line 155, scss/objects/_blocks.scss */
+/* line 159, scss/objects/_blocks.scss */
 .imgdesc > img {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 155, scss/objects/_blocks.scss */
+  /* line 159, scss/objects/_blocks.scss */
   .imgdesc > img {
     width: 57.143%;
     float: left;
   }
 }
-/* line 164, scss/objects/_blocks.scss */
+/* line 168, scss/objects/_blocks.scss */
 .imgdesc .desc {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 164, scss/objects/_blocks.scss */
+  /* line 168, scss/objects/_blocks.scss */
   .imgdesc .desc {
     height: 100%;
     width: 42.857%;

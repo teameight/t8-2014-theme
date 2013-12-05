@@ -50,9 +50,6 @@
 		padding: 0 10%;
 		height: 3.6em;
 		margin-top: -1.3em;
-		zoom: 1;
-		filter: alpha(opacity=90);
-		opacity: 0.9;
 
 		@media all and (min-width: $bp-large) {
 			position: absolute;
@@ -62,13 +59,17 @@
 
 .title-card {
 	position: absolute;
+	overflow:hidden;
 	left:0;
 	text-align:center;
 	bottom: 0;
 	width: 100%;
-	height: 100%;
-	background: $blue-med;
-	display: none;
+	height: 0;
+	@include background-opacity($blue-med, 0.9);
+	-webkit-transition: height 400ms ease;
+	-moz-transition: height 400ms ease;
+	-o-transition: height 400ms ease;
+	transition: height 400ms ease;
 
 	@media all and (min-width: $bp-med-2) {
 		font-size: $font-size-sm;
@@ -85,29 +86,32 @@
 	}
 }
 .g-2up .title-card {
-	height:50%;
 
 	div {
 		width: 280px;
 		padding: 0;
 		margin-left: -140px;
 		left:50%;
-		zoom: 1;
-		filter: alpha(opacity=90);
-		opacity: 0.9;
 	}
 }
-.gi:hover {
+.g-3up .gi:hover .title-card {
+	height:100%;
+}
+.g-2up .gi:hover {
 	background: $blue-med;
+	
+	.title-card {
+		height:50%;
+	}
 
 	img {
 		zoom: 1;
-		filter: alpha(opacity=50);
-		opacity: 0.5;
-	}
-
-	.title-card {
-		display: block;
+		filter: alpha(opacity=40);
+		opacity: 0.4;
+		-webkit-transition: opacity 200ms ease;
+	    -moz-transition: opacity 200ms ease;
+	    -o-transition: opacity 200ms ease;
+	    transition: opacity 200ms ease;
 	}
 }
 

@@ -79,7 +79,33 @@ add_action( 'wp_enqueue_scripts', 'teameight_scripts_styles' );
 function exclude_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
         $query->set( 'category_name', 'home' );
-        $query->set( 'posts_per_page', 6 );
+        // set the number of posts per page
+        $posts_per_page = 6;
+        // get sticky posts array
+        $sticky_posts = get_option( 'sticky_posts' );
+
+        // if we have any sticky posts and we are at the first page
+        if (is_array($sticky_posts) && !$query->is_paged()) {
+
+            // counnt the number of sticky posts
+            $sticky_count = count($sticky_posts);
+
+            // and if the number of sticky posts is less than
+            // the number we want to set:
+            if ($sticky_count < $posts_per_page) {
+                $query->set('posts_per_page', $posts_per_page - $sticky_count);
+
+                // if the number of sticky posts is greater than or equal
+                // the number of pages we want to set:
+            } else {
+                $query->set('posts_per_page', 1);
+            }
+
+            // fallback in case we have no sticky posts
+            // and we are not on the first page
+        } else {
+            $query->set('posts_per_page', $posts_per_page);
+        }
     }
 }
 add_action( 'pre_get_posts', 'exclude_category' );

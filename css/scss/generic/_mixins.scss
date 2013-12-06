@@ -26,9 +26,9 @@
 	Usage: @include font-2-style();
  */
 @mixin font-2-style() {
-	font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+	font-family: $font-secondary;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 700;
 	letter-spacing: .08em;
 }
 

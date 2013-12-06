@@ -8,7 +8,29 @@
 	}
 
 }
+.section.home-main {
+	background:transparent;
+	padding:0;
+}
+.section.cont-wrap {
+	padding: 6.12% 1%;
 
+	> img,
+	> div {
+		margin: 0 1% 2.12%;
+		max-width: 98%;
+		@media all and (min-width: $bp-full) {
+			margin: 0 $padpx-half 2.12%;
+		}
+	}
+	>.g {
+		margin: 0;
+		max-width: 100%;
+	}
+	@media all and (min-width: $bp-full) {
+		padding: 6.12% $padpx-half;
+	}
+}
 .section-title {
 	margin-bottom: $space-half;
 }

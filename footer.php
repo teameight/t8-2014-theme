@@ -33,7 +33,7 @@
 			</div>
 			<div class="bott">
 				<div class="wrap">
-					<p class="copyright">&copy; <?php echo date(Y); ?> Team Eight. All rights reserved.</p>
+					<p class="copyright">&copy; <?php echo date('Y'); ?> Team Eight. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>

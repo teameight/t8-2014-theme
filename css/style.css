@@ -230,7 +230,7 @@ header, footer, nav, section, article, hgroup, figure {
 /* line 1, scss/base/_main.scss */
 body {
   background: #eae8d3;
-  font: 100%/1.5 "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  font: 100%/1.5 "adobe-caslon-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
   -webkit-text-size-adjust: 100%;
   color: #6c6c71;
 }
@@ -295,17 +295,17 @@ h2, .beta {
 /* line 21, scss/base/_headings.scss */
 h3, .gamma {
   line-height: 1.2;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
 }
 
 /* line 26, scss/base/_headings.scss */
 h4, .delta {
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   font-size: 1.125em;
 }
@@ -313,7 +313,7 @@ h4, .delta {
 /* Subheadings */
 /* line 40, scss/base/_headings.scss */
 .subheading {
-  font-family: "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
   font-weight: normal;
   font-style: italic;
 }
@@ -436,9 +436,9 @@ fieldset {
 label {
   display: block;
   padding-bottom: 0.25rem;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   font-size: 0.875em;
   color: #6c6c71;
@@ -470,9 +470,9 @@ button, input[type="submit"] {
   border: 0;
   cursor: pointer;
   color: #cb4627;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
 }
 
@@ -592,9 +592,9 @@ th {
   text-align: left;
   border: 1px solid gray;
   padding: 0.2em;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   font-size: 0.75em;
 }
@@ -673,7 +673,7 @@ td {
 \*------------------------------------*/
 /* Grid Container */
 /* line 47, scss/objects/_layout.scss */
-.g {
+.section {
   overflow: hidden;
   margin: 40px 0;
   padding: 40px 0.875%;
@@ -683,15 +683,21 @@ td {
 }
 @media all and (min-width: 24em) {
   /* line 47, scss/objects/_layout.scss */
-  .g {
+  .section {
     margin: 80px 0;
   }
 }
-/* line 59, scss/objects/_layout.scss */
-.g > a {
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+@media all and (min-width: 63.75em) {
+  /* line 47, scss/objects/_layout.scss */
+  .section {
+    padding: 40px 10px;
+  }
+}
+/* line 62, scss/objects/_layout.scss */
+.section > a {
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   font-size: 0.875em;
   position: absolute;
@@ -699,18 +705,8 @@ td {
   right: 20px;
 }
 
-/* line 67, scss/objects/_layout.scss */
-.g.cont-wrap {
-  padding: 6.12% 2.05%;
-}
-/* line 71, scss/objects/_layout.scss */
-.g.cont-wrap > img,
-.g.cont-wrap > div {
-  margin-bottom: 2.12%;
-}
-
-/* line 76, scss/objects/_layout.scss */
-.g .ghead {
+/* line 70, scss/objects/_layout.scss */
+.section .ghead {
   position: absolute;
   top: -25px;
   width: 100%;
@@ -718,206 +714,224 @@ td {
 }
 
 /* Grid Item */
-/* line 84, scss/objects/_layout.scss */
+/* line 78, scss/objects/_layout.scss */
 .gi {
   padding: 0;
   margin: 0 1% 2.12%;
   position: relative;
 }
-/* line 89, scss/objects/_layout.scss */
+/* line 83, scss/objects/_layout.scss */
 .gi img {
   display: block;
 }
 @media all and (min-width: 28em) {
-  /* line 84, scss/objects/_layout.scss */
+  /* line 78, scss/objects/_layout.scss */
   .gi {
     float: left;
   }
 }
+@media all and (min-width: 63.75em) {
+  /* line 78, scss/objects/_layout.scss */
+  .gi {
+    margin: 0 10px 20px;
+  }
+}
 
 /* Grid 1up */
-/* line 100, scss/objects/_layout.scss */
+/* line 98, scss/objects/_layout.scss */
 .g-1up .gi {
   width: 100%;
 }
 
 /* Grid 2up */
 @media all and (min-width: 35em) {
-  /* line 107, scss/objects/_layout.scss */
+  /* line 105, scss/objects/_layout.scss */
   .g-2up > .gi {
     float: left;
     width: 47.92%;
   }
-  /* line 111, scss/objects/_layout.scss */
+  /* line 109, scss/objects/_layout.scss */
   .g-2up > .gi:nth-of-type(odd) {
     clear: left;
   }
 }
+@media all and (min-width: 63.75em) {
+  /* line 115, scss/objects/_layout.scss */
+  .g-2up > .gi {
+    width: 460px;
+  }
+}
 
 /* Grid Half (Always displayed side by side) */
-/* line 120, scss/objects/_layout.scss */
+/* line 123, scss/objects/_layout.scss */
 .g-half > .gi {
   float: left;
   width: 50%;
 }
-/* line 124, scss/objects/_layout.scss */
+/* line 127, scss/objects/_layout.scss */
 .g-half > .gi:nth-of-type(odd) {
   clear: left;
 }
 
 /* Grid 3up */
 @media all and (min-width: 28em) {
-  /* line 133, scss/objects/_layout.scss */
+  /* line 136, scss/objects/_layout.scss */
   .g-3up > .gi {
     float: left;
     width: 47.92%;
   }
-  /* line 137, scss/objects/_layout.scss */
+  /* line 140, scss/objects/_layout.scss */
   .g-3up > .gi:nth-of-type(2n+1) {
     clear: left;
   }
 }
 @media all and (min-width: 35em) {
-  /* line 144, scss/objects/_layout.scss */
+  /* line 147, scss/objects/_layout.scss */
   .g-3up > .gi {
     width: 31.25%;
   }
-  /* line 147, scss/objects/_layout.scss */
+  /* line 150, scss/objects/_layout.scss */
   .g-3up > .gi:nth-of-type(2n+1) {
     clear: none;
   }
-  /* line 151, scss/objects/_layout.scss */
+  /* line 154, scss/objects/_layout.scss */
   .g-3up > .gi:nth-of-type(3n+1) {
     clear: left;
+  }
+}
+@media all and (min-width: 63.75em) {
+  /* line 160, scss/objects/_layout.scss */
+  .g-3up > .gi {
+    width: 300px;
   }
 }
 
 /* Grid 4up */
 @media all and (min-width: 28em) {
-  /* line 161, scss/objects/_layout.scss */
+  /* line 170, scss/objects/_layout.scss */
   .g-4up > .gi {
     float: left;
     width: 50%;
   }
-  /* line 165, scss/objects/_layout.scss */
+  /* line 174, scss/objects/_layout.scss */
   .g-4up > .gi:nth-of-type(2n+1) {
     clear: both;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 172, scss/objects/_layout.scss */
+  /* line 181, scss/objects/_layout.scss */
   .g-4up > .gi {
     width: 25%;
   }
-  /* line 175, scss/objects/_layout.scss */
+  /* line 184, scss/objects/_layout.scss */
   .g-4up > .gi:nth-of-type(2n+1) {
     clear: none;
   }
-  /* line 179, scss/objects/_layout.scss */
+  /* line 188, scss/objects/_layout.scss */
   .g-4up > .gi:nth-of-type(4n+1) {
     clear: left;
   }
 }
 
 /* Grid Quarter (Always displayed side by side) */
-/* line 188, scss/objects/_layout.scss */
+/* line 197, scss/objects/_layout.scss */
 .g-quarter > .gi {
   float: left;
   width: 24%;
 }
-/* line 192, scss/objects/_layout.scss */
+/* line 201, scss/objects/_layout.scss */
 .g-quarter > .gi:nth-of-type(4n+1) {
   clear: left;
 }
 
 @media all and (min-width: 29.75em) {
-  /* line 201, scss/objects/_layout.scss */
+  /* line 210, scss/objects/_layout.scss */
   .g-max4 > .gi {
     float: left;
     width: 50%;
   }
-  /* line 205, scss/objects/_layout.scss */
+  /* line 214, scss/objects/_layout.scss */
   .g-max4 > .gi:nth-of-type(2n+1) {
     clear: both;
   }
 }
 @media all and (min-width: 39.8em) {
-  /* line 212, scss/objects/_layout.scss */
+  /* line 221, scss/objects/_layout.scss */
   .g-max4 > .gi {
     width: 33.3333333%;
   }
-  /* line 215, scss/objects/_layout.scss */
+  /* line 224, scss/objects/_layout.scss */
   .g-max4 > .gi:nth-of-type(2n+1) {
     clear: none;
   }
-  /* line 219, scss/objects/_layout.scss */
+  /* line 228, scss/objects/_layout.scss */
   .g-max4 > .gi:nth-of-type(3n+1) {
     clear: left;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 226, scss/objects/_layout.scss */
+  /* line 235, scss/objects/_layout.scss */
   .g-max4 > .gi {
     width: 25%;
   }
-  /* line 229, scss/objects/_layout.scss */
+  /* line 238, scss/objects/_layout.scss */
   .g-max4 > .gi:nth-of-type(3n+1) {
     clear: none;
   }
-  /* line 233, scss/objects/_layout.scss */
+  /* line 242, scss/objects/_layout.scss */
   .g-max4 > .gi:nth-of-type(4n+1) {
     clear: left;
   }
 }
 
 /* Grid 5up */
-/* line 243, scss/objects/_layout.scss */
+/* line 252, scss/objects/_layout.scss */
 .g-max5 > .gi {
   float: left;
   width: 50%;
 }
-/* line 247, scss/objects/_layout.scss */
+/* line 256, scss/objects/_layout.scss */
 .g-max5 > .gi:nth-of-type(2n+1) {
   clear: both;
 }
 @media all and (min-width: 39.8em) {
-  /* line 253, scss/objects/_layout.scss */
+  /* line 262, scss/objects/_layout.scss */
   .g-max5 > .gi {
     width: 33.3333333%;
   }
-  /* line 256, scss/objects/_layout.scss */
+  /* line 265, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(2n+1) {
     clear: none;
   }
-  /* line 260, scss/objects/_layout.scss */
+  /* line 269, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(3n+1) {
     clear: left;
   }
 }
 @media all and (min-width: 28em) {
-  /* line 267, scss/objects/_layout.scss */
+  /* line 276, scss/objects/_layout.scss */
   .g-max5 > .gi {
     width: 25%;
   }
-  /* line 270, scss/objects/_layout.scss */
+  /* line 279, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(3n+1) {
     clear: none;
   }
-  /* line 274, scss/objects/_layout.scss */
+  /* line 283, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(4n+1) {
     clear: left;
   }
 }
 @media all and (min-width: 35em) {
-  /* line 281, scss/objects/_layout.scss */
+  /* line 290, scss/objects/_layout.scss */
   .g-max5 > .gi {
     width: 20%;
   }
-  /* line 284, scss/objects/_layout.scss */
+  /* line 293, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(4n+1) {
     clear: none;
   }
-  /* line 288, scss/objects/_layout.scss */
+  /* line 297, scss/objects/_layout.scss */
   .g-max5 > .gi:nth-of-type(5n+1) {
     clear: left;
   }
@@ -925,7 +939,7 @@ td {
 
 /* Grid 2/3 */
 @media all and (min-width: 28em) {
-  /* line 296, scss/objects/_layout.scss */
+  /* line 305, scss/objects/_layout.scss */
   .gi-2-3 {
     float: left;
     width: 66.666666%;
@@ -933,7 +947,7 @@ td {
 }
 
 @media all and (min-width: 28em) {
-  /* line 303, scss/objects/_layout.scss */
+  /* line 312, scss/objects/_layout.scss */
   .gi-1-3 {
     float: left;
     width: 33.333333%;
@@ -941,11 +955,11 @@ td {
 }
 
 /* Grid 4up block */
-/* line 312, scss/objects/_layout.scss */
+/* line 321, scss/objects/_layout.scss */
 .g-opposites .gi {
   float: left;
 }
-/* line 315, scss/objects/_layout.scss */
+/* line 324, scss/objects/_layout.scss */
 .g-opposites .gi:last-child {
   float: right;
   text-align: right;
@@ -1026,9 +1040,9 @@ td {
 .nav-menu a {
   display: block;
   padding: 20px 20px 4px 0;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   font-size: 0.75em;
   color: #989898;
@@ -1171,7 +1185,7 @@ td {
 /* Global Font Classes */
 /* line 2, scss/objects/_text.scss */
 .font-secondary {
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 }
 
 /* line 5, scss/objects/_text.scss */
@@ -1225,7 +1239,7 @@ td {
 
 /* line 49, scss/objects/_text.scss */
 .pullquote {
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   font-size: 1.4375em;
 }
 
@@ -1459,9 +1473,9 @@ td {
   padding: 0.75rem 0.65rem 0.5rem;
   border: 0;
   text-align: center;
-  font-family: ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
 }
 /* line 15, scss/objects/_buttons.scss */
@@ -1615,7 +1629,7 @@ td {
   height: 50%;
 }
 /* line 107, scss/objects/_blocks.scss */
-.g-2up .gi:hover img {
+.g-2up .gi:hover > a > img {
   zoom: 1;
   filter: alpha(opacity=40);
   opacity: 0.4;
@@ -1780,47 +1794,82 @@ td {
   }
 }
 
-/* line 12, scss/objects/_sections.scss */
+/* line 11, scss/objects/_sections.scss */
+.section.home-main {
+  background: transparent;
+  padding: 0;
+}
+
+/* line 15, scss/objects/_sections.scss */
+.section.cont-wrap {
+  padding: 6.12% 1%;
+}
+/* line 19, scss/objects/_sections.scss */
+.section.cont-wrap > img,
+.section.cont-wrap > div {
+  margin: 0 1% 2.12%;
+  max-width: 98%;
+}
+@media all and (min-width: 63.75em) {
+  /* line 19, scss/objects/_sections.scss */
+  .section.cont-wrap > img,
+  .section.cont-wrap > div {
+    margin: 0 10px 2.12%;
+  }
+}
+/* line 26, scss/objects/_sections.scss */
+.section.cont-wrap > .g {
+  margin: 0;
+  max-width: 100%;
+}
+@media all and (min-width: 63.75em) {
+  /* line 15, scss/objects/_sections.scss */
+  .section.cont-wrap {
+    padding: 6.12% 10px;
+  }
+}
+
+/* line 34, scss/objects/_sections.scss */
 .section-title {
   margin-bottom: 0.5rem;
 }
 
 /* Home Main */
-/* line 17, scss/objects/_sections.scss */
+/* line 39, scss/objects/_sections.scss */
 .section.home-main {
   text-align: center;
   margin: 120px 0 200px;
 }
-/* line 21, scss/objects/_sections.scss */
+/* line 43, scss/objects/_sections.scss */
 .section.home-main > h1 {
   color: #6c6c71;
   font-size: 4em;
 }
 
 /* Team */
-/* line 28, scss/objects/_sections.scss */
+/* line 50, scss/objects/_sections.scss */
 .section.team {
   padding: 50px 3%;
 }
-/* line 31, scss/objects/_sections.scss */
+/* line 53, scss/objects/_sections.scss */
 .section.team .team-member {
   padding: 0;
   margin: 0 0 20px;
 }
 @media all and (min-width: 28em) {
-  /* line 31, scss/objects/_sections.scss */
+  /* line 53, scss/objects/_sections.scss */
   .section.team .team-member {
     width: 50%;
     float: left;
   }
 }
-/* line 41, scss/objects/_sections.scss */
+/* line 63, scss/objects/_sections.scss */
 .section.team .team-member img,
 .section.team .team-member .team-deets {
   display: block;
 }
 @media all and (min-width: 28em) {
-  /* line 41, scss/objects/_sections.scss */
+  /* line 63, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 90%;
@@ -1828,30 +1877,30 @@ td {
   }
 }
 @media all and (min-width: 45em) {
-  /* line 41, scss/objects/_sections.scss */
+  /* line 63, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 300px;
   }
 }
-/* line 53, scss/objects/_sections.scss */
+/* line 75, scss/objects/_sections.scss */
 .section.team .team-member .team-deets {
   background: #e4e2c6;
   padding: 20px;
   font-size: 0.875em;
 }
-/* line 58, scss/objects/_sections.scss */
+/* line 80, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .email {
   float: left;
   padding: 0;
   margin: 0;
 }
-/* line 64, scss/objects/_sections.scss */
+/* line 86, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social {
   float: right;
   height: 18px;
 }
-/* line 68, scss/objects/_sections.scss */
+/* line 90, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social li {
   margin-right: 0;
   margin-left: 7px;

@@ -411,6 +411,11 @@ figcaption {
   font-style: italic;
 }
 
+/* line 24, scss/base/_media.scss */
+.single-format-video iframe {
+  width: 100%;
+}
+
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/

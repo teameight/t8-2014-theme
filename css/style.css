@@ -1,3 +1,4 @@
+@import url(../fonts/genericons.css);
 /*                                                                                                                                         
                                                 ,,            ,,                          ,,                                             
  .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
@@ -254,7 +255,6 @@ a:hover, a:focus {
   display: inline-block;
   background: #989898;
   overflow: hidden;
-  text-indent: -999em;
   border-radius: 50%;
 }
 /* line 21, scss/base/_links.scss */
@@ -267,7 +267,16 @@ a:hover, a:focus {
   height: 18px;
   width: 18px;
   display: inline;
+  font-size: 18px;
   margin-right: 10px;
+}
+
+/**
+ * All Genericons.
+ */
+/* line 36, scss/base/_links.scss */
+[class*="genericon"] {
+  font-size: 18px;
 }
 
 /* Headings */
@@ -388,7 +397,7 @@ dd {
 /* Flexible Media */
 /* line 6, scss/base/_media.scss */
 img, video, object {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 

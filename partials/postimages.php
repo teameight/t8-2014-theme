@@ -35,7 +35,7 @@
 	<?php elseif( get_row_layout() == "row2" || get_row_layout() == "row3" ): ?>
 	<?php 
 		$row = ( get_row_layout() == "row2" ? 2 : 3 ); 
-		$imgsize = ( get_row_layout() == "row2" ? 'medium' : 'thumbnail' ); 
+		$imgsize = 'medium';
 	?>
 	<div class="g g-<?php echo $row; ?>up cf">
 		<div class="gi">

@@ -15,6 +15,6 @@
 			    echo '<img src="'. get_bloginfo('template_directory'). '/images/fpo_4x3.png" alt="4x3 Image">';
 			}
 			?>
-			<?php get_template_part( 'atoms/titlecard' ); ?>
+			<?php get_template_part( 'partials/titlecard' ); ?>
 		</a>
 	</div>

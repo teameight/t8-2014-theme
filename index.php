@@ -11,17 +11,17 @@ get_header(); ?>
 		<p>We make <a href="#">websites</a>... and <a href="#">other things.</a></p>
 	</section>
 	
-	<?php get_template_part( 'molecules/featposts' ); ?>
+	<?php get_template_part( 'partials/featposts' ); ?>
 
 	<section class="section g g-3up cf">
 		<h2 class="ghead"><span>Other Things</span></h2>
 		<?php /* The loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'molecules/threerow' ); ?>
+			<?php get_template_part( 'partials/threerow' ); ?>
 		<?php endwhile; ?>
-		<a href="#">View More</a>
+<!--		<a href="#">View More</a>-->
 	</section>
 
-	<?php get_template_part( 'molecules/team' ); ?>
+	<?php get_template_part( 'partials/team' ); ?>
 
 <?php get_footer(); ?>

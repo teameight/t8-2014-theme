@@ -2,8 +2,8 @@
 /**
  * Title Cards
  *
- * Markup for grid items' title cards. Used in molecules/featposts.php, 
- * molecules/tworows.php, molecules/threerows.php, 
+ * Markup for grid items' title cards. Used in partials/featposts.php,
+ * partials/tworows.php, partials/threerows.php,
  */
 ?>
 <div class="title-card tcrd">

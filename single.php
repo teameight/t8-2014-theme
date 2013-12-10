@@ -14,13 +14,11 @@ get_header(); ?>
 
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="phead cf">
-                        <header class="article-header tcrd">
-                            <div class="cf">
-                                <h1><?php the_title(); ?></h1>
-                                <?php if( get_field('subtitle') ): ?>
-                                    <h5 class="subheading"><?php the_field('subtitle'); ?></h5>
-                                <?php endif; ?>
-                            </div>
+                        <header class="article-header tcrd cf">
+                            <h1><?php the_title(); ?></h1>
+                            <?php if( get_field('subtitle') ): ?>
+                                <h5 class="subheading"><?php the_field('subtitle'); ?></h5>
+                            <?php endif; ?>
                         </header>
                         <div class="pcont entry-content">
                             <div class="text">

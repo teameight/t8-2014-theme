@@ -25,6 +25,10 @@
 
 	a {
 		color: $gray-light;
+
+        &:hover {
+            color: $gray;
+        }
 	}
 	
 	.left,

@@ -201,11 +201,7 @@ a {
   height: 18px;
   width: 18px;
   display: inline-block;
-  background: #989898;
-  overflow: hidden;
-  border-radius: 50%; }
-  .nav-social a:hover, .nav-social a:focus {
-    background: #6c6c71; }
+  overflow: hidden; }
 
 .nav-social li {
   height: 18px;
@@ -802,6 +798,8 @@ td {
     margin-bottom: 10px; }
   .footer a {
     color: #f9f9f9; }
+    .footer a:hover {
+      color: gray; }
   .footer .left,
   .footer .right {
     padding: 60px 20px;

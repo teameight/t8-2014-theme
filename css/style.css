@@ -413,7 +413,8 @@ figcaption {
 
 /* line 24, scss/base/_media.scss */
 .single-format-video iframe {
-  width: 100%;
+  width: 98%;
+  margin: 0 1%;
 }
 
 /*------------------------------------*\

@@ -25,7 +25,7 @@
     </div>
     <?php if( get_field('video') ): ?>
         <section class="section cont-wrap">
-            <?php get_template_part( 'atoms/video' ); ?>
+            <?php get_template_part( 'partials/video' ); ?>
         </section>
     <?php endif; ?>
 </article><!-- #post -->

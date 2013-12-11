@@ -38,7 +38,7 @@
 		<?php if( get_field('social') ): ?>
 			<ul class="nav-social">
 			<?php while( has_sub_field('social') ): ?>
-				<li><a href="<?php the_sub_field('link'); ?>" class="<?php the_sub_field('platform'); ?>"><?php the_sub_field('platform'); ?></a></li>				 
+				<li><a href="<?php the_sub_field('link'); ?>" class="<?php the_sub_field('platform'); ?>"><span class="genericon genericon-<?php the_sub_field('platform'); ?>"></span></a></li>
 			<?php endwhile; ?>
 			</ul>
 		<?php endif; ?>

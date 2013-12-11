@@ -25,7 +25,7 @@
 	</div>
 	<?php if( get_field('images') ): ?>
 	<section class="section cont-wrap">
-		<?php get_template_part( 'atoms/postimages' ); ?> 
+		<?php get_template_part( 'partials/postimages' ); ?>
 	</section>
 	<?php endif; ?>
 </article><!-- #post -->

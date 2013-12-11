@@ -196,6 +196,8 @@ a {
   a.anchor {
     display: block;
     padding-top: 30px; }
+  a img {
+    border: none; }
 
 .nav-social a {
   height: 18px;

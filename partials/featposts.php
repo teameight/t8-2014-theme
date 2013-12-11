@@ -6,7 +6,8 @@
  *
  */
 ?>
-	<section class="section g g-2up cf">
+    <a class="anchor" name="featured"></a>
+    <section class="section g g-2up cf">
 		<h2 class="ghead"><span>Featured Projects</span></h2>
 		<?php 
 		$args = array( 
@@ -31,5 +32,5 @@
 		</div>
 		<?php endforeach; ?>
 		<?php wp_reset_postdata(); ?>
-<!--		<a href="#">View More</a>-->
+<!--		<a class="more" href="#">View More</a>-->
 	</section>

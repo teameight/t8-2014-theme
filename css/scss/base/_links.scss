@@ -7,6 +7,11 @@ a {
 	&:hover, &:focus {
 		color: $red;
 	}
+
+    &.anchor {
+        display: block;
+        padding-top: 30px;
+    }
 }
 
 .nav-social a {

@@ -1,7 +1,7 @@
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 h1, .alpha   { 
-	line-height: 1.2;
+	line-height: 0.9em;
 	font-family: $font-tertiary;
 	font-weight: normal;
 	font-size: 3.25em;
@@ -19,7 +19,8 @@ h2, .beta    {
 }
 
 h3, .gamma   { 
-	line-height: 1.2;
+	line-height: 1.1;
+	font-size: 1.125em;
 	@include font-2-style();
 }
 
@@ -39,11 +40,12 @@ h6, .zeta    {
 /* Subheadings */
 .subheading {
 	font-family: $font;
-	font-weight: normal;
+	font-weight: 300;
 	font-style:italic;
+	letter-spacing: 0.05em;
 }
 h5.subheading {
-	font-size: 1.75em;
+	font-size: 1.5em;
 	color: $white;
 	line-height: .9;
 	margin-top: 0.2em;

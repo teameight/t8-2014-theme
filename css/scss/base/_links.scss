@@ -9,8 +9,10 @@ a {
 	}
 
     &.anchor {
-        display: block;
-        padding-top: 30px;
+        position:absolute;
+        top:-100px;
+        height:0;
+        display:block;
     }
 
     img {

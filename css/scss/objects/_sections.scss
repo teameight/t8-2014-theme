@@ -13,14 +13,15 @@
 	padding:0;
 }
 .section.cont-wrap {
-	padding: 6.12% 1%;
+	padding: 6% 1%;
 
 	> img,
 	> div {
-		margin: 0 1% 2.12%;
+		margin: 0 1% 2%;
 		max-width: 98%;
+		display: block;
 		@media all and (min-width: $bp-full) {
-			margin: 0 $padpx-half 2.12%;
+			margin: 0 $padpx-half 2%;
 		}
 	}
 	>.g {
@@ -28,7 +29,7 @@
 		max-width: 100%;
 	}
 	@media all and (min-width: $bp-full) {
-		padding: 6.12% $padpx-half;
+		padding: 6% $padpx-half;
 	}
 }
 .section-title {

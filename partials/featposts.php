@@ -6,8 +6,8 @@
  *
  */
 ?>
-    <a class="anchor" name="featured"></a>
     <section class="section g g-2up cf">
+	    <a class="anchor" name="featured"></a>
 		<h2 class="ghead"><span>Featured Projects</span></h2>
 		<?php 
 		$args = array( 

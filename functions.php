@@ -46,21 +46,12 @@ add_action( 'after_setup_theme', 'teameight_setup' );
  * @return void
  */
 function teameight_scripts_styles() {
-	/*
-	 * Adds JavaScript to pages with the comment form to support
-	 * sites with threaded comments (when in use).
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	// Loads JavaScript file with functionality specific to Team Eight.
-	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
-
-	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
-	wp_enqueue_style( 'teameight-fonts', teameight_fonts_url(), array(), null );
-
+/*
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '2.09' );
 	 */
+	// Loads JavaScript file with functionality specific to Team Eight.
+	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2013-12-02' );

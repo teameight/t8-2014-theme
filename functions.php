@@ -71,7 +71,7 @@ function exclude_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
         $query->set( 'category_name', 'home' );
         // set the number of posts per page
-        $posts_per_page = 6;
+        $posts_per_page = 9;
         // get sticky posts array
         $sticky_posts = get_option( 'sticky_posts' );
 

@@ -15,7 +15,7 @@ get_header(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="phead cf">
                         <header class="article-header tcrd">
-                            <div class="cf">
+                            <div>
                                 <h1><?php the_title(); ?></h1>
                                 <?php if( get_field('subtitle') ): ?>
                                     <h5 class="subheading"><?php the_field('subtitle'); ?></h5>
@@ -28,16 +28,16 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <?php if( get_field('images') ): ?>
+                    <?php if( get_field('images') ||  get_field('video') ){ ?>
                         <section class="section cont-wrap">
-                            <?php get_template_part( 'partials/postimages' ); ?>
-                        </section>
-                    <?php endif; ?>
-                    <?php if( get_field('video') ): ?>
-                        <section class="section cont-wrap">
+                        <?php if( get_field('video') ): ?>
                             <?php get_template_part( 'partials/video' ); ?>
+                        <?php endif; ?>
+                        <?php if( get_field('images') ): ?>
+                            <?php get_template_part( 'partials/postimages' ); ?>
+                        <?php endif; ?>
                         </section>
-                    <?php endif; ?>
+                    <?php } ?>
                 </article><!-- #post -->
 			<?php endwhile; ?>
 

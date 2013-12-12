@@ -432,6 +432,24 @@ figcaption {
   width: 100%;
 }
 
+/* line 27, scss/base/_media.scss */
+.videoWrapper p {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 0;
+  height: 0;
+}
+
+/* line 33, scss/base/_media.scss */
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
@@ -1584,21 +1602,20 @@ td {
 }
 /* line 46, scss/objects/_blocks.scss */
 .tcrd div {
-  position: relative;
-  top: 50%;
   width: 100%;
   padding: 0 10%;
-  height: 3.6em;
-  margin-top: -1.3em;
-}
-@media all and (min-width: 45em) {
-  /* line 46, scss/objects/_blocks.scss */
-  .tcrd div {
-    position: absolute;
-  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-/* line 60, scss/objects/_blocks.scss */
+/* line 61, scss/objects/_blocks.scss */
 .title-card {
   position: absolute;
   overflow: hidden;
@@ -1616,44 +1633,36 @@ td {
   transition: height 400ms ease;
 }
 @media all and (min-width: 35em) {
-  /* line 60, scss/objects/_blocks.scss */
+  /* line 61, scss/objects/_blocks.scss */
   .title-card {
     font-size: 0.875em;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 60, scss/objects/_blocks.scss */
+  /* line 61, scss/objects/_blocks.scss */
   .title-card {
     font-size: 1em;
   }
 }
-/* line 84, scss/objects/_blocks.scss */
+/* line 85, scss/objects/_blocks.scss */
 .title-card h3 {
   color: white;
 }
 
 /* line 90, scss/objects/_blocks.scss */
-.g-2up .title-card div {
-  width: 280px;
-  padding: 0;
-  margin-left: -140px;
-  left: 50%;
-}
-
-/* line 97, scss/objects/_blocks.scss */
 .g-3up .gi:hover .title-card {
   height: 100%;
 }
 
-/* line 100, scss/objects/_blocks.scss */
+/* line 93, scss/objects/_blocks.scss */
 .g-2up .gi:hover {
   background: #94a8ad;
 }
-/* line 103, scss/objects/_blocks.scss */
+/* line 96, scss/objects/_blocks.scss */
 .g-2up .gi:hover .title-card {
   height: 50%;
 }
-/* line 107, scss/objects/_blocks.scss */
+/* line 100, scss/objects/_blocks.scss */
 .g-2up .gi:hover > a > img {
   zoom: 1;
   filter: alpha(opacity=40);
@@ -1665,73 +1674,77 @@ td {
 }
 
 /* Post Title */
-/* line 119, scss/objects/_blocks.scss */
+/* line 112, scss/objects/_blocks.scss */
 .article-header.tcrd {
   height: 100%;
   background: #989898;
 }
 @media all and (min-width: 45em) {
-  /* line 119, scss/objects/_blocks.scss */
+  /* line 112, scss/objects/_blocks.scss */
   .article-header.tcrd {
     width: 42.857%;
     float: left;
   }
 }
-/* line 128, scss/objects/_blocks.scss */
+/* line 120, scss/objects/_blocks.scss */
 .article-header.tcrd div {
-  height: auto;
-  margin-top: 0;
   padding: 10%;
 }
-@media all and (min-width: 45em) {
-  /* line 128, scss/objects/_blocks.scss */
+@media all and (max-width: 45em) {
+  /* line 120, scss/objects/_blocks.scss */
   .article-header.tcrd div {
-    height: 6em;
-    margin-top: -3em;
-    padding: 0 10%;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
-/* line 140, scss/objects/_blocks.scss */
+/* line 134, scss/objects/_blocks.scss */
 .article-header.tcrd h2 {
   color: white;
 }
 
 /* Post Content */
 @media all and (min-width: 45em) {
-  /* line 145, scss/objects/_blocks.scss */
+  /* line 139, scss/objects/_blocks.scss */
   .pcont {
     width: 57.143%;
     float: right;
   }
 }
 
-/* line 152, scss/objects/_blocks.scss */
+/* line 146, scss/objects/_blocks.scss */
 .phead {
   position: relative;
 }
 
-/* line 155, scss/objects/_blocks.scss */
+/* line 149, scss/objects/_blocks.scss */
 .imgdesc {
   position: relative;
   background: #e4e2c6;
 }
-/* line 159, scss/objects/_blocks.scss */
+/* line 153, scss/objects/_blocks.scss */
 .imgdesc > img {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 159, scss/objects/_blocks.scss */
+  /* line 153, scss/objects/_blocks.scss */
   .imgdesc > img {
     width: 57.143%;
     float: left;
   }
 }
-/* line 168, scss/objects/_blocks.scss */
+/* line 162, scss/objects/_blocks.scss */
 .imgdesc .desc {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 168, scss/objects/_blocks.scss */
+  /* line 162, scss/objects/_blocks.scss */
   .imgdesc .desc {
     height: 100%;
     width: 42.857%;

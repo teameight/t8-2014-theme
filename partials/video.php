@@ -8,5 +8,7 @@
 ?>
 <?php $vid = get_field('video'); ?>
     <?php if(!empty($vid)): // layout: Video ?>
-        <?php echo $vid; ?>
+        <div class="videoWrapper">
+        	<?php echo $vid; ?>
+        </div>
 <?php endif; ?>

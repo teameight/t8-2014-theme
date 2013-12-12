@@ -20,15 +20,19 @@
 					</ul>
 				</div>
 				<div class="right">
-					<form action="#" method="post" class="inline-form newsletter-form">           
+					<!-- Begin MailChimp Signup Form -->
+					<form action="http://team-eight.us5.list-manage.com/subscribe/post?u=b27e0b88c8dcc2a4d49d9fd36&amp;id=34d5690b8c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate inline-form newsletter-form" target="_blank" novalidate>
 					    <fieldset>
 						    <h4>Keep Up</h4>
 						    <div class="inline-container">
-						   		<input type="newsletter" placeholder="your e-mail..." id="newsletter-field" class="newsletter-field" />
-						    	<button class="newsletter-submit">Subscribe</button>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your e-mail..." required>
+							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_b27e0b88c8dcc2a4d49d9fd36_34d5690b8c" value=""></div>
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 							</div>
 					    </fieldset>
 					</form>
+					<!--End mc_embed_signup-->
 				</div>
 			</div>
 			<div class="bott">

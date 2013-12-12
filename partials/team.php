@@ -7,6 +7,7 @@
  */
 ?>
 <section class="section g team cf">
+    <a class="anchor" name="team"></a>
 	<h2 class="ghead"><span>Team</span></h2>
 	<?php 
 	$args = array( 

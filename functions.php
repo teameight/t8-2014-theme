@@ -67,7 +67,7 @@ add_action( 'wp_enqueue_scripts', 'teameight_scripts_styles' );
  *
  * limits the main query to the 6 most recent posts in the home category
  */
-function exclude_category( $query ) {
+function include_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
         $query->set( 'category_name', 'home' );
         // set the number of posts per page
@@ -99,4 +99,4 @@ function exclude_category( $query ) {
         }
     }
 }
-add_action( 'pre_get_posts', 'exclude_category' );
+add_action( 'pre_get_posts', 'include_category' );

@@ -57,9 +57,10 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 \*------------------------------------*/
 @font-face {
   font-family: 'BlanchCon';
-  src: url("../fonts/blanchcon.otf");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/blanchcon.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/blanchcon.eot?#iefix") format("embedded-opentype"), url("../fonts/blanchcon.woff") format("woff"), url("../fonts/blanchcon.ttf") format("truetype"), url("../fonts/blanchcon.svg#svgBlanchCon") format("svg");
+  /* Legacy iOS */
 }
 
 /*------------------------------------*\
@@ -267,7 +268,7 @@ a img {
   overflow: hidden;
 }
 
-/* line 37, scss/base/_links.scss */
+/* line 33, scss/base/_links.scss */
 .nav-social li {
   height: 18px;
   width: 18px;
@@ -279,7 +280,7 @@ a img {
 /**
  * All Genericons.
  */
-/* line 48, scss/base/_links.scss */
+/* line 44, scss/base/_links.scss */
 [class*="genericon"] {
   font-size: 18px;
 }
@@ -1009,7 +1010,7 @@ td {
 \*------------------------------------*/
 /* line 1, scss/objects/_header.scss */
 .header {
-  background: #e4e2c6;
+  background: #dedcbb;
   padding: 7px 0;
   height: 50px;
   overflow: visible;
@@ -1173,16 +1174,16 @@ td {
 }
 /* line 26, scss/objects/_footer.scss */
 .footer a {
-  color: #f9f9f9;
+  color: #eae8d3;
 }
 /* line 29, scss/objects/_footer.scss */
 .footer a:hover {
-  color: gray;
+  color: #94a8ad;
 }
 /* line 35, scss/objects/_footer.scss */
 .footer .left,
 .footer .right {
-  padding: 60px 20px;
+  padding: 60px 40px;
   float: none;
 }
 /* line 39, scss/objects/_footer.scss */
@@ -1837,12 +1838,16 @@ td {
   background: transparent;
   padding: 0;
 }
-
 /* line 15, scss/objects/_sections.scss */
+.section.home-main h1 {
+  margin-bottom: 0.25em;
+}
+
+/* line 19, scss/objects/_sections.scss */
 .section.cont-wrap {
   padding: 6% 1%;
 }
-/* line 19, scss/objects/_sections.scss */
+/* line 23, scss/objects/_sections.scss */
 .section.cont-wrap > img,
 .section.cont-wrap > div {
   margin: 0 1% 2%;
@@ -1850,65 +1855,65 @@ td {
   display: block;
 }
 @media all and (min-width: 1040px) {
-  /* line 19, scss/objects/_sections.scss */
+  /* line 23, scss/objects/_sections.scss */
   .section.cont-wrap > img,
   .section.cont-wrap > div {
     margin: 0 10px 2%;
   }
 }
-/* line 27, scss/objects/_sections.scss */
+/* line 31, scss/objects/_sections.scss */
 .section.cont-wrap > .g {
   margin: 0;
   max-width: 100%;
 }
 @media all and (min-width: 1040px) {
-  /* line 15, scss/objects/_sections.scss */
+  /* line 19, scss/objects/_sections.scss */
   .section.cont-wrap {
     padding: 6% 10px;
   }
 }
 
-/* line 35, scss/objects/_sections.scss */
+/* line 39, scss/objects/_sections.scss */
 .section-title {
   margin-bottom: 0.5rem;
 }
 
 /* Home Main */
-/* line 40, scss/objects/_sections.scss */
+/* line 44, scss/objects/_sections.scss */
 .section.home-main {
   text-align: center;
   margin: 120px 0 200px;
 }
-/* line 44, scss/objects/_sections.scss */
+/* line 48, scss/objects/_sections.scss */
 .section.home-main > h1 {
   color: #6c6c71;
   font-size: 4em;
 }
 
 /* Team */
-/* line 51, scss/objects/_sections.scss */
+/* line 55, scss/objects/_sections.scss */
 .section.team {
   padding: 50px 3%;
 }
-/* line 54, scss/objects/_sections.scss */
+/* line 58, scss/objects/_sections.scss */
 .section.team .team-member {
   padding: 0;
   margin: 0 0 20px;
 }
 @media all and (min-width: 28em) {
-  /* line 54, scss/objects/_sections.scss */
+  /* line 58, scss/objects/_sections.scss */
   .section.team .team-member {
     width: 50%;
     float: left;
   }
 }
-/* line 64, scss/objects/_sections.scss */
+/* line 68, scss/objects/_sections.scss */
 .section.team .team-member img,
 .section.team .team-member .team-deets {
   display: block;
 }
 @media all and (min-width: 28em) {
-  /* line 64, scss/objects/_sections.scss */
+  /* line 68, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 90%;
@@ -1916,30 +1921,30 @@ td {
   }
 }
 @media all and (min-width: 45em) {
-  /* line 64, scss/objects/_sections.scss */
+  /* line 68, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 300px;
   }
 }
-/* line 76, scss/objects/_sections.scss */
+/* line 80, scss/objects/_sections.scss */
 .section.team .team-member .team-deets {
   background: #e4e2c6;
   padding: 20px;
   font-size: 0.875em;
 }
-/* line 81, scss/objects/_sections.scss */
+/* line 85, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .email {
   float: left;
   padding: 0;
   margin: 0;
 }
-/* line 87, scss/objects/_sections.scss */
+/* line 91, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social {
   float: right;
   height: 18px;
 }
-/* line 91, scss/objects/_sections.scss */
+/* line 95, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social li {
   margin-right: 0;
   margin-left: 7px;

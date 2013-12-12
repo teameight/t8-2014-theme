@@ -26,7 +26,8 @@ function teameight_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
+        'aside', 'image', 'quote', 'video'
+        //'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
 	) );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -69,7 +70,7 @@ add_action( 'wp_enqueue_scripts', 'teameight_scripts_styles' );
  */
 function include_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'category_name', 'home' );
+        $query->set( 'category_name', 'other-things' );
         // set the number of posts per page
         $posts_per_page = 9;
         // get sticky posts array

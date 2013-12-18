@@ -85,7 +85,7 @@ function include_category( $query ) {
             // and if the number of sticky posts is less than
             // the number we want to set:
             if ($sticky_count < $posts_per_page) {
-                $query->set('posts_per_page', $posts_per_page - $sticky_count);
+                $query->set('posts_per_page', $posts_per_page - $sticky_count + 1);
 
                 // if the number of sticky posts is greater than or equal
                 // the number of pages we want to set:

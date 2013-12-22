@@ -7,19 +7,27 @@ a {
 	&:hover, &:focus {
 		color: $red;
 	}
+
+    &.anchor {
+        position:absolute;
+        top:-100px;
+        height:0;
+        display:block;
+    }
+
+    img {
+        border: none;
+    }
 }
+
 
 .nav-social a {
 	height:18px;
 	width: 18px;
 	display: inline-block;
-	background: $grey-light;
 	overflow: hidden;
-//	text-indent: -999em;
-	border-radius: 50%;
 
 	&:hover, &:focus {
-		background: $grey;
 	}
 }
 .nav-social li {

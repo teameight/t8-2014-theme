@@ -6,30 +6,34 @@
  *
  */
 ?>
-	<section class="section g g-2up cf">
-		<h2 class="ghead"><span>Featured Projects</span></h2>
+    <section class="section g g-2up cf">
+	    <a class="anchor" name="featured"></a>
+		<h2 class="ghead"><span>Featured Sites</span></h2>
 		<?php 
 		$args = array( 
 			'posts_per_page' 	=> 4,
-			'category_name'		=> 'featured'
+			'cat'		=> 47, // featured cat id
+			'no_found_rows' => true
 		);
-		$featposts = get_posts( $args );
-		?>
-		<?php foreach ( $featposts as $post ) : ?>
-		  	<?php setup_postdata( $post ); ?>
+		$featposts = new WP_Query( $args );
+		
+		if($featposts->have_posts()) : 
+		      while($featposts->have_posts()) : 
+		         $featposts->the_post();
+ ?>
 		<div class="gi" id="gi-<?php the_ID(); ?>">
 			<a href="<?php the_permalink(); ?>">
 				<?php 
 				if ( '' != get_the_post_thumbnail() ) {
 				    the_post_thumbnail( 'large' );
 				} else {
-				    echo '<img src="'. get_bloginfo('template_directory'). '/images/fpo_4x3.png" alt="4x3 Image">';
+				    echo '<img src="'. get_template_directory_uri() . '/images/fpo_4x3.png" alt="4x3 Image">';
 				}
 				?>
 				<?php get_template_part( 'partials/titlecard' ); ?>
 			</a>
 		</div>
-		<?php endforeach; ?>
+		<?php endwhile; endif; ?>
 		<?php wp_reset_postdata(); ?>
-<!--		<a href="#">View More</a>-->
+<!--		<a class="more" href="#">View More</a>-->
 	</section>

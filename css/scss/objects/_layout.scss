@@ -59,7 +59,7 @@
 	padding: $padpx-double $padpx-half;
 	}
 
-	>a {
+	> a.more {
 		@include font-2-style();
 		font-size: $font-size-sm;
 		position: absolute;

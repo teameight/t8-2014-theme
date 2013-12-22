@@ -24,12 +24,16 @@
 	}
 
 	a {
-		color: $gray-light;
+		color: $creme-light;
+
+        &:hover {
+            color: $blue-med;
+        }
 	}
 	
 	.left,
 	.right {
-		padding: $padpx-triple $padpx;
+		padding: $padpx-triple $padpx-double;
 		float:none;
 	}
 	.left {

@@ -57,9 +57,10 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 \*------------------------------------*/
 @font-face {
   font-family: 'BlanchCon';
-  src: url("../fonts/blanchcon.otf");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../fonts/blanchcon.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/blanchcon.eot?#iefix") format("embedded-opentype"), url("../fonts/blanchcon.woff") format("woff"), url("../fonts/blanchcon.ttf") format("truetype"), url("../fonts/blanchcon.svg#svgBlanchCon") format("svg");
+  /* Legacy iOS */
 }
 
 /*------------------------------------*\
@@ -231,7 +232,7 @@ header, footer, nav, section, article, hgroup, figure {
 /* line 1, scss/base/_main.scss */
 body {
   background: #eae8d3;
-  font: 100%/1.5 "adobe-caslon-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  font: 100%/1.6 "freight-text-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
   -webkit-text-size-adjust: 100%;
   color: #6c6c71;
 }
@@ -247,22 +248,27 @@ a {
 a:hover, a:focus {
   color: #cb4627;
 }
+/* line 11, scss/base/_links.scss */
+a.anchor {
+  position: absolute;
+  top: -100px;
+  height: 0;
+  display: block;
+}
+/* line 18, scss/base/_links.scss */
+a img {
+  border: none;
+}
 
-/* line 12, scss/base/_links.scss */
+/* line 24, scss/base/_links.scss */
 .nav-social a {
   height: 18px;
   width: 18px;
   display: inline-block;
-  background: #989898;
   overflow: hidden;
-  border-radius: 50%;
-}
-/* line 21, scss/base/_links.scss */
-.nav-social a:hover, .nav-social a:focus {
-  background: #6c6c71;
 }
 
-/* line 25, scss/base/_links.scss */
+/* line 33, scss/base/_links.scss */
 .nav-social li {
   height: 18px;
   width: 18px;
@@ -274,7 +280,7 @@ a:hover, a:focus {
 /**
  * All Genericons.
  */
-/* line 36, scss/base/_links.scss */
+/* line 44, scss/base/_links.scss */
 [class*="genericon"] {
   font-size: 18px;
 }
@@ -283,7 +289,7 @@ a:hover, a:focus {
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 /* line 3, scss/base/_headings.scss */
 h1, .alpha {
-  line-height: 1.2;
+  line-height: 0.9em;
   font-family: "BlanchCon", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   font-weight: normal;
   font-size: 3.25em;
@@ -303,33 +309,35 @@ h2, .beta {
 
 /* line 21, scss/base/_headings.scss */
 h3, .gamma {
-  line-height: 1.2;
+  line-height: 1.1;
+  font-size: 1.125em;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
 }
 
-/* line 26, scss/base/_headings.scss */
+/* line 27, scss/base/_headings.scss */
 h4, .delta {
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   font-size: 1.125em;
 }
 
 /* Subheadings */
-/* line 40, scss/base/_headings.scss */
+/* line 41, scss/base/_headings.scss */
 .subheading {
-  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
-  font-weight: normal;
+  font-family: "freight-text-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+  font-weight: 300;
   font-style: italic;
+  letter-spacing: 0.05em;
 }
 
-/* line 45, scss/base/_headings.scss */
+/* line 47, scss/base/_headings.scss */
 h5.subheading {
-  font-size: 1.75em;
+  font-size: 1.5em;
   color: white;
   line-height: .9;
   margin-top: 0.2em;
@@ -426,6 +434,24 @@ figcaption {
   margin: 0 1%;
 }
 
+/* line 27, scss/base/_media.scss */
+.videoWrapper p {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 0;
+  height: 0;
+}
+
+/* line 33, scss/base/_media.scss */
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
@@ -453,7 +479,7 @@ label {
   padding-bottom: 0.25rem;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   font-size: 0.875em;
   color: #6c6c71;
@@ -487,7 +513,7 @@ button, input[type="submit"] {
   color: #cb4627;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
 }
 
@@ -609,7 +635,7 @@ th {
   padding: 0.2em;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   font-size: 0.75em;
 }
@@ -702,17 +728,17 @@ td {
     margin: 80px 0;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 1040px) {
   /* line 47, scss/objects/_layout.scss */
   .section {
     padding: 40px 10px;
   }
 }
 /* line 62, scss/objects/_layout.scss */
-.section > a {
+.section > a.more {
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   font-size: 0.875em;
   position: absolute;
@@ -745,7 +771,7 @@ td {
     float: left;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 1040px) {
   /* line 78, scss/objects/_layout.scss */
   .gi {
     margin: 0 10px 20px;
@@ -770,7 +796,7 @@ td {
     clear: left;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 1040px) {
   /* line 115, scss/objects/_layout.scss */
   .g-2up > .gi {
     width: 460px;
@@ -814,7 +840,7 @@ td {
     clear: left;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 1040px) {
   /* line 160, scss/objects/_layout.scss */
   .g-3up > .gi {
     width: 300px;
@@ -985,7 +1011,7 @@ td {
 \*------------------------------------*/
 /* line 1, scss/objects/_header.scss */
 .header {
-  background: #e4e2c6;
+  background: #dedcbb;
   padding: 7px 0;
   height: 50px;
   overflow: visible;
@@ -1057,7 +1083,7 @@ td {
   padding: 20px 20px 4px 0;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   font-size: 0.75em;
   color: #989898;
@@ -1149,46 +1175,50 @@ td {
 }
 /* line 26, scss/objects/_footer.scss */
 .footer a {
-  color: #f9f9f9;
+  color: #eae8d3;
 }
-/* line 31, scss/objects/_footer.scss */
-.footer .left,
-.footer .right {
-  padding: 60px 20px;
-  float: none;
+/* line 29, scss/objects/_footer.scss */
+.footer a:hover {
+  color: #94a8ad;
 }
 /* line 35, scss/objects/_footer.scss */
+.footer .left,
+.footer .right {
+  padding: 60px 40px;
+  float: none;
+}
+/* line 39, scss/objects/_footer.scss */
 .footer .left {
   border-bottom: 1px dashed #e4e2c6;
 }
 @media all and (min-width: 35em) {
-  /* line 35, scss/objects/_footer.scss */
+  /* line 39, scss/objects/_footer.scss */
   .footer .left {
     float: left;
     border-bottom: 0;
   }
 }
 @media all and (min-width: 35em) {
-  /* line 43, scss/objects/_footer.scss */
+  /* line 47, scss/objects/_footer.scss */
   .footer .right {
     float: right;
   }
 }
-/* line 49, scss/objects/_footer.scss */
+/* line 53, scss/objects/_footer.scss */
 .footer .nav-social {
   padding: 10px 0;
 }
-/* line 53, scss/objects/_footer.scss */
+/* line 57, scss/objects/_footer.scss */
 .footer .bott {
   border-top: 1px solid #e4e2c6;
 }
-/* line 56, scss/objects/_footer.scss */
+/* line 60, scss/objects/_footer.scss */
 .footer .bott .copyright {
   padding: 20px 20px 0;
   font-size: 0.875em;
 }
 @media all and (min-width: 35em) {
-  /* line 56, scss/objects/_footer.scss */
+  /* line 60, scss/objects/_footer.scss */
   .footer .bott .copyright {
     text-align: left;
   }
@@ -1490,7 +1520,7 @@ td {
   text-align: center;
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
 }
 /* line 15, scss/objects/_buttons.scss */
@@ -1574,21 +1604,20 @@ td {
 }
 /* line 46, scss/objects/_blocks.scss */
 .tcrd div {
-  position: relative;
-  top: 50%;
   width: 100%;
   padding: 0 10%;
-  height: 3.6em;
-  margin-top: -1.3em;
-}
-@media all and (min-width: 45em) {
-  /* line 46, scss/objects/_blocks.scss */
-  .tcrd div {
-    position: absolute;
-  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-/* line 60, scss/objects/_blocks.scss */
+/* line 61, scss/objects/_blocks.scss */
 .title-card {
   position: absolute;
   overflow: hidden;
@@ -1606,44 +1635,36 @@ td {
   transition: height 400ms ease;
 }
 @media all and (min-width: 35em) {
-  /* line 60, scss/objects/_blocks.scss */
+  /* line 61, scss/objects/_blocks.scss */
   .title-card {
     font-size: 0.875em;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 60, scss/objects/_blocks.scss */
+  /* line 61, scss/objects/_blocks.scss */
   .title-card {
     font-size: 1em;
   }
 }
-/* line 84, scss/objects/_blocks.scss */
+/* line 85, scss/objects/_blocks.scss */
 .title-card h3 {
   color: white;
 }
 
 /* line 90, scss/objects/_blocks.scss */
-.g-2up .title-card div {
-  width: 280px;
-  padding: 0;
-  margin-left: -140px;
-  left: 50%;
-}
-
-/* line 97, scss/objects/_blocks.scss */
 .g-3up .gi:hover .title-card {
   height: 100%;
 }
 
-/* line 100, scss/objects/_blocks.scss */
+/* line 93, scss/objects/_blocks.scss */
 .g-2up .gi:hover {
   background: #94a8ad;
 }
-/* line 103, scss/objects/_blocks.scss */
+/* line 96, scss/objects/_blocks.scss */
 .g-2up .gi:hover .title-card {
   height: 50%;
 }
-/* line 107, scss/objects/_blocks.scss */
+/* line 100, scss/objects/_blocks.scss */
 .g-2up .gi:hover > a > img {
   zoom: 1;
   filter: alpha(opacity=40);
@@ -1655,73 +1676,77 @@ td {
 }
 
 /* Post Title */
-/* line 119, scss/objects/_blocks.scss */
+/* line 112, scss/objects/_blocks.scss */
 .article-header.tcrd {
   height: 100%;
   background: #989898;
 }
 @media all and (min-width: 45em) {
-  /* line 119, scss/objects/_blocks.scss */
+  /* line 112, scss/objects/_blocks.scss */
   .article-header.tcrd {
     width: 42.857%;
     float: left;
   }
 }
-/* line 128, scss/objects/_blocks.scss */
+/* line 120, scss/objects/_blocks.scss */
 .article-header.tcrd div {
-  height: auto;
-  margin-top: 0;
   padding: 10%;
 }
-@media all and (min-width: 45em) {
-  /* line 128, scss/objects/_blocks.scss */
+@media all and (max-width: 45em) {
+  /* line 120, scss/objects/_blocks.scss */
   .article-header.tcrd div {
-    height: 6em;
-    margin-top: -3em;
-    padding: 0 10%;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
-/* line 140, scss/objects/_blocks.scss */
+/* line 134, scss/objects/_blocks.scss */
 .article-header.tcrd h2 {
   color: white;
 }
 
 /* Post Content */
 @media all and (min-width: 45em) {
-  /* line 145, scss/objects/_blocks.scss */
+  /* line 139, scss/objects/_blocks.scss */
   .pcont {
     width: 57.143%;
     float: right;
   }
 }
 
-/* line 152, scss/objects/_blocks.scss */
+/* line 146, scss/objects/_blocks.scss */
 .phead {
   position: relative;
 }
 
-/* line 155, scss/objects/_blocks.scss */
+/* line 149, scss/objects/_blocks.scss */
 .imgdesc {
   position: relative;
   background: #e4e2c6;
 }
-/* line 159, scss/objects/_blocks.scss */
+/* line 153, scss/objects/_blocks.scss */
 .imgdesc > img {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 159, scss/objects/_blocks.scss */
+  /* line 153, scss/objects/_blocks.scss */
   .imgdesc > img {
     width: 57.143%;
     float: left;
   }
 }
-/* line 168, scss/objects/_blocks.scss */
+/* line 162, scss/objects/_blocks.scss */
 .imgdesc .desc {
   width: 100%;
 }
 @media all and (min-width: 45em) {
-  /* line 168, scss/objects/_blocks.scss */
+  /* line 162, scss/objects/_blocks.scss */
   .imgdesc .desc {
     height: 100%;
     width: 42.857%;
@@ -1802,7 +1827,7 @@ td {
     margin: 80px 0;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 1040px) {
   /* line 1, scss/objects/_sections.scss */
   .section {
     max-width: 1020px;
@@ -1814,77 +1839,82 @@ td {
   background: transparent;
   padding: 0;
 }
-
 /* line 15, scss/objects/_sections.scss */
-.section.cont-wrap {
-  padding: 6.12% 1%;
+.section.home-main h1 {
+  margin-bottom: 0.25em;
 }
+
 /* line 19, scss/objects/_sections.scss */
+.section.cont-wrap {
+  padding: 6% 1%;
+}
+/* line 23, scss/objects/_sections.scss */
 .section.cont-wrap > img,
 .section.cont-wrap > div {
-  margin: 0 1% 2.12%;
+  margin: 0 1% 2%;
   max-width: 98%;
+  display: block;
 }
-@media all and (min-width: 63.75em) {
-  /* line 19, scss/objects/_sections.scss */
+@media all and (min-width: 1040px) {
+  /* line 23, scss/objects/_sections.scss */
   .section.cont-wrap > img,
   .section.cont-wrap > div {
-    margin: 0 10px 2.12%;
+    margin: 0 10px 2%;
   }
 }
-/* line 26, scss/objects/_sections.scss */
+/* line 31, scss/objects/_sections.scss */
 .section.cont-wrap > .g {
   margin: 0;
   max-width: 100%;
 }
-@media all and (min-width: 63.75em) {
-  /* line 15, scss/objects/_sections.scss */
+@media all and (min-width: 1040px) {
+  /* line 19, scss/objects/_sections.scss */
   .section.cont-wrap {
-    padding: 6.12% 10px;
+    padding: 6% 10px;
   }
 }
 
-/* line 34, scss/objects/_sections.scss */
+/* line 39, scss/objects/_sections.scss */
 .section-title {
   margin-bottom: 0.5rem;
 }
 
 /* Home Main */
-/* line 39, scss/objects/_sections.scss */
+/* line 44, scss/objects/_sections.scss */
 .section.home-main {
   text-align: center;
   margin: 120px 0 200px;
 }
-/* line 43, scss/objects/_sections.scss */
+/* line 48, scss/objects/_sections.scss */
 .section.home-main > h1 {
   color: #6c6c71;
   font-size: 4em;
 }
 
 /* Team */
-/* line 50, scss/objects/_sections.scss */
+/* line 55, scss/objects/_sections.scss */
 .section.team {
   padding: 50px 3%;
 }
-/* line 53, scss/objects/_sections.scss */
+/* line 58, scss/objects/_sections.scss */
 .section.team .team-member {
   padding: 0;
   margin: 0 0 20px;
 }
 @media all and (min-width: 28em) {
-  /* line 53, scss/objects/_sections.scss */
+  /* line 58, scss/objects/_sections.scss */
   .section.team .team-member {
     width: 50%;
     float: left;
   }
 }
-/* line 63, scss/objects/_sections.scss */
+/* line 68, scss/objects/_sections.scss */
 .section.team .team-member img,
 .section.team .team-member .team-deets {
   display: block;
 }
 @media all and (min-width: 28em) {
-  /* line 63, scss/objects/_sections.scss */
+  /* line 68, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 90%;
@@ -1892,30 +1922,30 @@ td {
   }
 }
 @media all and (min-width: 45em) {
-  /* line 63, scss/objects/_sections.scss */
+  /* line 68, scss/objects/_sections.scss */
   .section.team .team-member img,
   .section.team .team-member .team-deets {
     width: 300px;
   }
 }
-/* line 75, scss/objects/_sections.scss */
+/* line 80, scss/objects/_sections.scss */
 .section.team .team-member .team-deets {
   background: #e4e2c6;
   padding: 20px;
   font-size: 0.875em;
 }
-/* line 80, scss/objects/_sections.scss */
+/* line 85, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .email {
   float: left;
   padding: 0;
   margin: 0;
 }
-/* line 86, scss/objects/_sections.scss */
+/* line 91, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social {
   float: right;
   height: 18px;
 }
-/* line 90, scss/objects/_sections.scss */
+/* line 95, scss/objects/_sections.scss */
 .section.team .team-member .team-deets .nav-social li {
   margin-right: 0;
   margin-left: 7px;

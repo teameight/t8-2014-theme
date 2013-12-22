@@ -10,6 +10,7 @@ $blue : #BDCED3;
 $creme : #E4E2C6;
 $creme-light : #EAE8D3;
 $creme-light-2 : #F4F2E4;
+$creme-dark : #DEDCBB;
 $grey : #6C6C71;
 $grey-light : #989898;
 $grey-light-2 : #D1D1D4;
@@ -38,13 +39,15 @@ $brand-linkedin: #217bc1;
 //Typography
 @font-face {
 	font-family: 'BlanchCon';
-	src:url('../fonts/blanchcon.otf');
-	font-weight: normal;
-	font-style: normal;
-}
+	src: url('../fonts/blanchcon.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/blanchcon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/blanchcon.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/blanchcon.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('../fonts/blanchcon.svg#svgBlanchCon') format('svg'); /* Legacy iOS */
+	}
 
 
-$font : "adobe-caslon-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
+$font : "freight-text-pro", "Adobe Caslon Pro", Georgia, Times, "Times New Roman", serif;
 $font-secondary : "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 $font-tertiary : "BlanchCon", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 
@@ -97,7 +100,7 @@ $bp-med-2 : 35em;
 
 $bp-large : 45em; // (720px)
 $bp-large-2 : 50em; // (800px)
-$bp-full : 63.75em; // (1020px)
+$bp-full : 1040px; // (1020px)
 
 $bp-xl : 73em;
 $bp-xxl : 89em;

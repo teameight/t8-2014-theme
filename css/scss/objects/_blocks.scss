@@ -44,16 +44,17 @@
 
 
 	div {
-		position: relative;
-		top:50%;
 		width: 100%;
 		padding: 0 10%;
-		height: 3.6em;
-		margin-top: -1.3em;
-
-		@media all and (min-width: $bp-large) {
-			position: absolute;
-		}
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform:    translate(-50%, -50%);
+		-ms-transform:     translate(-50%, -50%);
+		-o-transform:      translate(-50%, -50%);
+		transform:         translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -85,15 +86,7 @@
 		color: $white;
 	}
 }
-.g-2up .title-card {
 
-	div {
-		width: 280px;
-		padding: 0;
-		margin-left: -140px;
-		left:50%;
-	}
-}
 .g-3up .gi:hover .title-card {
 	height:100%;
 }
@@ -124,18 +117,19 @@
 		width:42.857%;
 		float:left;
 	}
-
 	div {
-		height: auto;
-		margin-top: 0;
 		padding: 10%;
-
-		@media all and (min-width: $bp-large) {
-			height: 6em;
-			margin-top: -3em;
-			padding: 0 10%;
+		@media all and (max-width: $bp-large) {
+			position: relative;
+			left: 0%;
+			top: 0%;
+			-webkit-transform: translate(0, 0);
+			-moz-transform:    translate(0, 0);
+			-ms-transform:     translate(0, 0);
+			-o-transform:      translate(0, 0);
+			transform:         translate(0, 0);
+			transform: translate(0, 0);
 		}
-
 	}
 	h2 {
 		color: $white;

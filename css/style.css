@@ -1239,30 +1239,36 @@ td {
 
 /* line 10, scss/objects/_text.scss */
 .ghead {
-  padding-left: 2.55%;
+  padding-left: 1.75%;
   position: relative;
-  line-height: 1;
+  line-height: 45px;
   height: 38px;
 }
+@media all and (min-width: 1040px) {
+  /* line 10, scss/objects/_text.scss */
+  .ghead {
+    padding-left: 20px;
+  }
+}
 
-/* line 16, scss/objects/_text.scss */
+/* line 19, scss/objects/_text.scss */
 .ghead:before {
   background: #cb4627;
   height: 1px;
   width: 100%;
   position: absolute;
-  bottom: 13px;
+  top: 25px;
   left: 0;
   content: '';
 }
 
-/* line 25, scss/objects/_text.scss */
+/* line 28, scss/objects/_text.scss */
 .ghead span {
   position: relative;
   z-index: 1;
 }
 
-/* line 29, scss/objects/_text.scss */
+/* line 32, scss/objects/_text.scss */
 .ghead span:before {
   background: #eae8d3;
   height: 25px;
@@ -1273,61 +1279,62 @@ td {
   position: absolute;
   z-index: -1;
   left: -5px;
+  top: 0;
 }
 
-/* line 43, scss/objects/_text.scss */
+/* line 47, scss/objects/_text.scss */
 .intro {
   font-size: 1.0625em;
   font-weight: bold;
 }
 
-/* line 49, scss/objects/_text.scss */
+/* line 53, scss/objects/_text.scss */
 .pullquote {
   font-family: "franklin-gothic-urw", ITC Franklin Gothic Std, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   font-size: 1.4375em;
 }
 
-/* line 55, scss/objects/_text.scss */
+/* line 59, scss/objects/_text.scss */
 .text {
   background: #e4e2c6;
   padding: 20px;
 }
 @media all and (min-width: 24em) {
-  /* line 55, scss/objects/_text.scss */
+  /* line 59, scss/objects/_text.scss */
   .text {
     padding: 40px;
   }
 }
 @media all and (min-width: 45em) {
-  /* line 55, scss/objects/_text.scss */
+  /* line 59, scss/objects/_text.scss */
   .text {
     padding: 9% 10% 7%;
   }
 }
-/* line 67, scss/objects/_text.scss */
+/* line 71, scss/objects/_text.scss */
 .text a {
   text-decoration: none;
   color: #738d97;
 }
-/* line 71, scss/objects/_text.scss */
+/* line 75, scss/objects/_text.scss */
 .text a:hover, .text a:focus {
   color: #cb4627;
 }
-/* line 76, scss/objects/_text.scss */
+/* line 80, scss/objects/_text.scss */
 .text ul {
   list-style: disc;
   margin: 0 0 1rem 1.2em;
 }
-/* line 80, scss/objects/_text.scss */
+/* line 84, scss/objects/_text.scss */
 .text ul ul {
   margin-bottom: 0;
 }
-/* line 85, scss/objects/_text.scss */
+/* line 89, scss/objects/_text.scss */
 .text ol {
   list-style: decimal;
   margin: 0 0 1rem 1.2em;
 }
-/* line 89, scss/objects/_text.scss */
+/* line 93, scss/objects/_text.scss */
 .text ol ol {
   margin-bottom: 0;
 }

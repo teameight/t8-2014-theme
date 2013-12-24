@@ -8,17 +8,20 @@
 
 //Group Header
 .ghead {
-	padding-left: 2.55%;
+	padding-left: 1.75%;
 	position: relative;
-	line-height: 1;
+	line-height: 45px;
 	height: 38px;
+	@media all and (min-width: $bp-full) {
+		padding-left: $padpx;
+	}
 }
 .ghead:before {
 	background: $red;
 	height: 1px;
 	width: 100%;
 	position: absolute;
-	bottom: 13px;
+	top: 25px;
 	left: 0;
 	content: '';
 }
@@ -36,6 +39,7 @@
 	position: absolute;
 	z-index: -1;
 	left: -5px;
+	top:0;
 }
 
 

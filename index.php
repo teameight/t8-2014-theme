@@ -10,7 +10,7 @@ get_header(); ?>
 		<h1><?php bloginfo('name'); ?></h1>
 		<?php 
 		$args = array( 
-			'page_id'		=> 2215, // home page id
+			'pagename'		=> 'home', // home page id
 		);
 		$homep = new WP_Query( $args );
 		

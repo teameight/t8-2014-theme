@@ -10,6 +10,7 @@
 	    <a class="anchor" name="featured"></a>
 		<h2 class="ghead"><span>Featured Sites</span></h2>
 		<?php 
+		// Most recent 4 from the Featured category
 		$args = array( 
 			'posts_per_page' 	=> 4,
 			'cat'		=> 47, // featured cat id

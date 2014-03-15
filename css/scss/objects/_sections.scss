@@ -8,14 +8,7 @@
 	}
 
 }
-.section.home-main {
-	background:transparent;
-	padding:0;
 
-	h1 {
-		margin-bottom: 0.25em;
-	}
-}
 .section.cont-wrap {
 	padding: 6% 1%;
 
@@ -43,12 +36,45 @@
 /* Home Main */
 .section.home-main {
 	text-align:center;
-	margin: $padpx-triple*2 0 $padpx-quad*2.5;
+	margin: $padpx-triple 0 $padpx-triple*2;
+	background:transparent;
+	padding:0;
 
 	>h1 {
 		color: $grey;
 		font-size: 4em;
-	}	
+		margin-bottom: 0.25em;
+	}
+	p {
+		font-size: 1.2em;
+	}
+}
+.section.big-notice {
+	
+	background:$red;
+	padding:0;
+	margin-bottom: $padpx-quad*2.5;
+
+	.article-header.tcrd {
+
+		background:$red;
+
+		h1, h5 {
+			color:$creme-light;
+		}
+
+	}
+
+	.text {
+
+		border: 1px solid $red;
+		background:$creme-light;
+		color: $red;
+		font-size: 1.15em;
+
+	}
+
+
 }
 
 /* Team */

@@ -7,8 +7,29 @@
 get_header(); ?>
 
 	<section class="section cf home-main">
-		<h1>Team Eight</h1>
-		<p><a class="scroll" href="#team">We</a> make <a class="scroll" href="#featured">websites</a>... and <a class="scroll" href="#other">other things.</a></p>
+		<h1><?php bloginfo('name'); ?></h1>
+		<?php 
+		$args = array( 
+			'page_id'		=> 2215, // home page id
+		);
+		$homep = new WP_Query( $args );
+		
+		if($homep->have_posts()) : 
+		    while($homep->have_posts()) : 
+		    	$homep->the_post();
+ 		?>
+			<?php the_content(); ?>
+			<?php if( get_field('big_notice') ) { ?>
+
+	</section>
+
+	<section class="section cf big-notice">
+		<?php the_field('big_notice'); ?>
+	</section>
+
+			<?php } ?>
+		<?php endwhile; endif; ?>
+		<?php wp_reset_postdata(); ?>
 	</section>
 	
 	<?php get_template_part( 'partials/featposts' ); ?>

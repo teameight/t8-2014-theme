@@ -11,22 +11,17 @@
 	<h2 class="ghead"><span>Team</span></h2>
 	<?php 
 	$args = array( 
-		'cat'		=> 46, // team cat id
-		'posts_per_page' 	=> 2,
-		'no_found_rows' => true
+		'category_name'		=> 'team'
 	);
-	$teamposts = new WP_Query( $args );
-		
-		if($teamposts->have_posts()) : 
-		      while($teamposts->have_posts()) : 
-		         $teamposts->the_post();
- ?>
+	$featposts = get_posts( $args );
+	foreach ( $featposts as $post ) :
+	  	setup_postdata( $post ); ?>
 	<div class="team-member">
 		<?php 
 		if ( '' != get_the_post_thumbnail() ) {
 		    the_post_thumbnail( 'medium' );
 		} else {
-		    echo '<img src="'. get_template_directory_uri() . '/images/fpo_3x4.png" alt="3x4 Image">';
+		    echo '<img src="'. get_bloginfo('template_directory'). '/images/fpo_3x4.png" alt="3x4 Image">';
 		}
 		?>
 		<div class="team-deets cf">
@@ -50,7 +45,7 @@
 		<?php endif; ?>
 		</div>
 	</div>
-		<?php endwhile; endif; 
+		<?php endforeach; 
 	wp_reset_postdata();
 	?>
 </section>

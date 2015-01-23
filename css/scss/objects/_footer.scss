@@ -37,7 +37,7 @@
 		float:none;
 	}
 	.left {
-		border-bottom: 1px dashed $creme;
+		border-bottom: 2px dashed $creme;
 
 		@media all and (min-width: $bp-med-2) {
 			float:left;
@@ -55,7 +55,7 @@
 	}
 
 	.bott {
-	    border-top: 1px solid $creme;
+	    border-top: 2px solid $creme;
 
 	    .copyright {
 		    padding: $padpx $padpx 0;

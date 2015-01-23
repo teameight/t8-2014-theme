@@ -47,9 +47,26 @@
 	}
 	p {
 		font-size: 1.2em;
+
+		em {
+			display:block;
+			position:relative;
+		}
+		em::before {
+			content: "";
+			display: block;
+			top: -8px;
+			height: 2px;
+			background: $blue-med;
+			width: 5em;
+			margin: 0 auto -2px;
+			position: relative;
+		}
 	}
+
 }
-.section.big-notice {
+.section.big-notice, 
+.section.makers {
 	
 	background:$red;
 	padding:0;
@@ -67,17 +84,34 @@
 
 	.text {
 
-		border: 1px solid $red;
+		border: 2px solid $red;
 		background:$creme-light;
 		color: $red;
 		font-size: 1.15em;
 
 	}
 
+}
+.section.makers {
+	background:$blue-dark;
+	margin-bottom:$padpx*1.5;
+	.article-header.tcrd {
 
+		background:$blue-dark;
+
+
+	}
+
+	.text {
+
+		border: 2px solid $blue-dark;
+		color: $blue-dark;
+
+	}
 }
 
 /* Team */
+
 .section.team {
 	padding: $padpx-dub-half 3%;
 
@@ -127,4 +161,64 @@
 	}	
 
 }
+.team-about {
+	margin: $padpx*1.5 0;
+	background: #E4E2C6;
+
+	.article-header.tcrd {
+		background: #E4E2C6;
+		padding-top:$padpx;
+
+		@media all and (min-width: $bp-med) {
+			padding-top:$padpx*2;
+		}
+		@media all and (min-width: $bp-large) {
+			padding-top: 0;
+		}
+
+		div {
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			padding: 0;
+			border-radius: 50%;
+			margin:0 auto;
+
+			img {
+				max-width: 200px;
+				top: -1.5em;
+				position: relative;
+			}
+		}
+	}
+	h4 {
+		font-size: 1em;
+	}
+	h5.subheading {
+		color: $grey;
+		font-size: 1em;
+		margin-top: 0;
+		font-style: normal;
+		margin-bottom: 1.18em;
+		border-bottom: 2px solid #94A8AD;
+		padding-bottom: .2em;
+		line-height:1.6;
+	}
+	.email {
+				float: left;
+				padding: 0;
+				margin: 0;
+			}
+
+			.nav-social {
+				float: right;
+				height: 18px;
+
+				li {
+					margin-right: 0;
+					margin-left: 7px;
+				}
+			}
+}
+
 

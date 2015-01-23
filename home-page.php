@@ -1,7 +1,7 @@
 <?php
 /**
  *
-	Template Name: Home Page
+ *	Template Name: Home Page
  *
  */
 
@@ -41,7 +41,7 @@ get_header(); ?>
 
 	<section class="section g g-3up cf">
 	    <a class="anchor" name="other"></a>
-		<h2 class="ghead"><span>Other Things</span></h2>
+		<h2 class="ghead"><span>Other Things We're Proud Of</span></h2>
 		<?php 
 		// Most recent 9 STICKY POSTS ONLY from the Other Things category
 		$args = array( 
@@ -62,6 +62,33 @@ get_header(); ?>
 <!--		<a class="more" href="#">View More</a>-->
 	</section>
 
-	<?php get_template_part( 'partials/team' ); ?>
+
+<?php while ( have_posts() ) : the_post(); ?>
+	<?php if( get_field('makers') ) { ?>
+
+
+	<section class="section cf makers">
+		<a class="anchor" name="makers"></a>
+		<div class="phead cf">
+		    <header class="article-header tcrd">
+		        <div>
+		            <h1><?php the_field('makers_label'); ?></h1>
+		            <h5 class="subheading"><?php the_field('makers_sub'); ?></h5>
+		        </div>
+		    </header>
+		    <div class="pcont entry-content">
+		        <div class="text">
+		        	<?php the_field('makers'); ?>
+		        </div>
+		    </div>
+		</div>
+
+	</section>
+
+	<?php } ?>
+<?php endwhile; ?>
+
+
+	<?php get_template_part( 'partials/team2' ); ?>
 
 <?php get_footer(); ?>

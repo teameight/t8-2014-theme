@@ -7,6 +7,14 @@
 }
 
 //Group Header
+
+.section .ghead {
+	position: absolute;
+	top: -24px;
+	width: 100%;
+	left: 0;
+}
+
 .ghead {
 	padding-left: 1.75%;
 	position: relative;
@@ -18,10 +26,10 @@
 }
 .ghead:before {
 	background: $red;
-	height: 1px;
+	height: 2px;
 	width: 100%;
 	position: absolute;
-	top: 25px;
+	top: 22px;
 	left: 0;
 	content: '';
 }
@@ -31,7 +39,7 @@
 }
 .ghead span:before {
 	background: $creme-light;
-	height: 25px;
+	height: 22px;
 	width: 100%;
 	padding: 0 5px;
 	content: '';
@@ -65,7 +73,7 @@
 	}
 
 	@media all and (min-width: $bp-large) {
-		padding: 9% 10% 7%;
+		padding: 10% 10% 7%;
 	}
 
 	a {

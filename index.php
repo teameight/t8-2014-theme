@@ -36,7 +36,7 @@ get_header(); ?>
 
 	<section class="section g g-3up cf">
 	    <a class="anchor" name="other"></a>
-		<h2 class="ghead"><span>Other Things</span></h2>
+		<h2 class="ghead"><span>More Things We're Proud Of</span></h2>
 		<?php /* The loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'partials/threerow' ); ?>
@@ -44,6 +44,34 @@ get_header(); ?>
 <!--		<a class="more" href="#">View More</a>-->
 	</section>
 
-	<?php get_template_part( 'partials/team' ); ?>
+	<?php if($homep->have_posts()) : 
+		    while($homep->have_posts()) : 
+		    	$homep->the_post(); ?>
+	<?php if( get_field('makers') ) { ?>
+
+
+	<section class="section cf makers">
+		<a class="anchor" name="makers"></a>
+		<div class="phead cf">
+		    <header class="article-header tcrd">
+		        <div>
+		            <h1><?php the_field('makers_label'); ?></h1>
+		            <h5 class="subheading"><?php the_field('makers_sub'); ?></h5>
+		        </div>
+		    </header>
+		    <div class="pcont entry-content">
+		        <div class="text">
+		        	<?php the_field('makers'); ?>
+		        </div>
+		    </div>
+		</div>
+
+	</section>
+
+	<?php } ?>
+	<?php endwhile; endif; ?>
+	<?php wp_reset_postdata(); ?>
+
+	<?php get_template_part( 'partials/team2' ); ?>
 
 <?php get_footer(); ?>

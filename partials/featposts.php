@@ -8,7 +8,7 @@
 ?>
     <section class="section g g-2up cf">
 	    <a class="anchor" name="featured"></a>
-		<h2 class="ghead"><span>Featured Sites</span></h2>
+		<h2 class="ghead"><span>Featured Work</span></h2>
 		<?php 
 		$args = array( 
 			'posts_per_page' 	=> 4,

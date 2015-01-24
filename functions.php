@@ -42,7 +42,7 @@ function teameight_scripts_styles() {
 	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-1-22' );
+	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-1-23' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'teameight-ie', get_template_directory_uri() . '/css/ie.css', array( 'teameight-style' ), '2013-07-18' );
@@ -88,3 +88,63 @@ function team_eight_query_other_things( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'team_eight_query_other_things' );
+
+function create_teammates_teameight()
+{
+    $labels = array(
+        'name'              => _x( 'Groups', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Group', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Groups' ),
+        'all_items'         => __( 'All Groups' ),
+        'parent_item'       => __( 'Parent Group' ),
+        'parent_item_colon' => __( 'Parent Group:' ),
+        'edit_item'         => __( 'Edit Group' ),
+        'update_item'       => __( 'Update Group' ),
+        'add_new_item'      => __( 'Add New Group' ),
+        'new_item_name'     => __( 'New Group Name' ),
+        'menu_name'         => __( 'Groups' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'group' ),
+    );
+
+    register_taxonomy( 'group', array( 'teammate' ), $args );
+
+    register_post_type('teammate', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Team Mates', 'teameight'), // Rename these to suit
+            'singular_name' => __('Team Mate', 'teameight'),
+            'add_new' => __('Add New', 'teameight'),
+            'add_new_item' => __('Add New Team Mate', 'teameight'),
+            'edit' => __('Edit', 'teameight'),
+            'edit_item' => __('Edit Team Mate', 'teameight'),
+            'new_item' => __('New Team Mate', 'teameight'),
+            'view' => __('View Team Mate', 'teameight'),
+            'view_item' => __('View Team Mate', 'teameight'),
+            'search_items' => __('Search Team Mates', 'teameight'),
+            'not_found' => __('No Team Mates found', 'teameight'),
+            'not_found_in_trash' => __('No Team Mates found in Trash', 'teameight')
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-groups',
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'group'
+        ) // Add Category and Post Tags support
+    ));
+}
+add_action('init', 'create_teammates_teameight'); // Add our Custom Post Type

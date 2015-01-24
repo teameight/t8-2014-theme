@@ -8,7 +8,11 @@
 ?>
 <?php 
 	$args = array( 
-		'category_name'		=> 'team'
+		'posts_per_page' => -1,
+		 'orderby' => 'ASC',
+		 'post_type' => 'teammate',
+		 'group' => 'active',
+		 'post_status' => 'publish'
 	);
 	$featposts = get_posts( $args );
 	foreach ( $featposts as $post ) :
@@ -29,11 +33,11 @@
             </header>
             <div class="pcont entry-content">
                 <div class="text">
-                    <h4><?php the_title(); ?></h4>
+                    <h4><?php the_title(); ?><span class="genericon genericon-expand"></span></h4>
                     <?php if( get_field('subtitle') ): ?>
                         <h5 class="subheading"><?php the_field('subtitle'); ?></h5>
                     <?php endif; ?>
-                    <?php the_content(); ?>
+                    <div class="slide" ><?php the_content(); ?></div>
                     <?php 
 					$email = get_field( "email" );
 					

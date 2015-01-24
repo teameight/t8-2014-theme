@@ -72,6 +72,22 @@ get_header(); ?>
 	<?php endwhile; endif; ?>
 	<?php wp_reset_postdata(); ?>
 
-	<?php get_template_part( 'partials/team2' ); ?>
+	<?php 
+		$args = array( 
+			'posts_per_page' => -1,
+			 'orderby' => 'ASC',
+			 'post_type' => 'teammate',
+			 'group' => 'active',
+			 'post_status' => 'publish'
+		);
+		$featposts = get_posts( $args );
+		foreach ( $featposts as $post ) :
+		  	setup_postdata( $post );
 
+			include(locate_template('partials/teammate.php'));
+
+		endforeach; 
+		wp_reset_postdata();
+	?>
+	
 <?php get_footer(); ?>

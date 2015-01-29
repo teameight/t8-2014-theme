@@ -2055,24 +2055,23 @@ td {
 /* line 194, scss/objects/_sections.scss */
 .team-about .article-header.tcrd div img {
   max-width: 200px;
-  top: -1.5em;
   position: relative;
   cursor: pointer;
 }
-/* line 202, scss/objects/_sections.scss */
+/* line 201, scss/objects/_sections.scss */
 .team-about h4 {
   font-size: 1em;
   cursor: pointer;
   position: relative;
 }
-/* line 207, scss/objects/_sections.scss */
+/* line 206, scss/objects/_sections.scss */
 .team-about h4 span.genericon {
   position: absolute;
   right: 0;
   font-size: 1.5em;
   top: -3px;
 }
-/* line 214, scss/objects/_sections.scss */
+/* line 213, scss/objects/_sections.scss */
 .team-about h5.subheading {
   color: #6C6C71;
   font-size: 1em;
@@ -2083,7 +2082,7 @@ td {
   line-height: 1.6;
   position: relative;
 }
-/* line 224, scss/objects/_sections.scss */
+/* line 223, scss/objects/_sections.scss */
 .team-about h5.subheading::before {
   content: "";
   position: absolute;
@@ -2098,16 +2097,16 @@ td {
   transition: width 600ms, background-color 600ms;
 }
 @media all and (min-width: 45em) {
-  /* line 224, scss/objects/_sections.scss */
+  /* line 223, scss/objects/_sections.scss */
   .team-about h5.subheading::before {
     width: 138%;
   }
 }
-/* line 243, scss/objects/_sections.scss */
+/* line 242, scss/objects/_sections.scss */
 .team-about .text {
   background: transparent;
 }
-/* line 246, scss/objects/_sections.scss */
+/* line 245, scss/objects/_sections.scss */
 .team-about .text .slide {
   max-height: 0;
   overflow: hidden;
@@ -2116,48 +2115,48 @@ td {
   -o-transition: max-height 600ms ease;
   transition: max-height 600ms ease;
 }
-/* line 255, scss/objects/_sections.scss */
+/* line 254, scss/objects/_sections.scss */
 .team-about .email {
   display: block;
   text-align: right;
 }
 @media all and (min-width: 28em) {
-  /* line 255, scss/objects/_sections.scss */
+  /* line 254, scss/objects/_sections.scss */
   .team-about .email {
     float: left;
     padding: 0;
     margin: 0;
   }
 }
-/* line 265, scss/objects/_sections.scss */
+/* line 264, scss/objects/_sections.scss */
 .team-about .nav-social {
   float: right;
   height: 18px;
 }
-/* line 269, scss/objects/_sections.scss */
+/* line 268, scss/objects/_sections.scss */
 .team-about .nav-social li {
   margin-right: 0;
   margin-left: 7px;
 }
-/* line 274, scss/objects/_sections.scss */
+/* line 273, scss/objects/_sections.scss */
 .team-about .proj-link {
   display: block;
   text-align: right;
 }
 
-/* line 279, scss/objects/_sections.scss */
+/* line 278, scss/objects/_sections.scss */
 .team-about.open {
   background: #DEDCBB;
 }
-/* line 283, scss/objects/_sections.scss */
+/* line 282, scss/objects/_sections.scss */
 .team-about.open h4 span.genericon-expand::before {
   content: '\f432';
 }
-/* line 287, scss/objects/_sections.scss */
+/* line 286, scss/objects/_sections.scss */
 .team-about.open .text .slide {
   max-height: 500px;
 }
-/* line 290, scss/objects/_sections.scss */
+/* line 289, scss/objects/_sections.scss */
 .team-about.open h5.subheading::before {
   width: 100%;
   background: #CB4627;

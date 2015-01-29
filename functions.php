@@ -42,7 +42,7 @@ function teameight_scripts_styles() {
 	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-1-23' );
+	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-1-28' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'teameight-ie', get_template_directory_uri() . '/css/ie.css', array( 'teameight-style' ), '2013-07-18' );
@@ -139,7 +139,8 @@ function create_teammates_teameight()
             'title',
             'editor',
             'excerpt',
-            'thumbnail'
+            'thumbnail',
+            'page-attributes'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(

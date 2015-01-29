@@ -6,15 +6,11 @@
  */
 ?>
 
+<?php if ( '' != get_the_post_thumbnail() ) { ?>
 	<div class="gi" id="gi-<?php the_ID(); ?>">
 		<a href="<?php the_permalink(); ?>">
-			<?php 
-			if ( '' != get_the_post_thumbnail() ) {
-			    the_post_thumbnail( 'large' );
-			} else {
-			    echo '<img src="'. get_bloginfo('template_directory'). '/images/fpo_4x3.png" alt="4x3 Image">';
-			}
-			?>
+			<?php the_post_thumbnail( 'large' ); ?>
 			<?php get_template_part( 'partials/titlecard' ); ?>
 		</a>
 	</div>
+<?php } ?>

@@ -52,7 +52,7 @@ if(is_single()) $t_class .= " open";
 						
 						}
 					?>
-					<?php if(!is_single()) { ?>
+					<?php if(!is_single() && get_field('show_recent') ) { ?>
 						<a class="proj-link" href="<?php the_permalink(); ?>">recent projects &raquo;</a>
 					<?php } ?>
 					</div>

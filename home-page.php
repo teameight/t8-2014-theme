@@ -92,10 +92,11 @@ get_header(); ?>
 <?php 
 	$args = array( 
 		'posts_per_page' => -1,
-		 'orderby' => 'ASC',
-		 'post_type' => 'teammate',
-		 'group' => 'active',
-		 'post_status' => 'publish'
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
+		'post_type' => 'teammate',
+		'group' => 'active',
+		'post_status' => 'publish'
 	);
 	$featposts = get_posts( $args );
 	foreach ( $featposts as $post ) :

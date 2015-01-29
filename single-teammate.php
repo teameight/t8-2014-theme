@@ -16,23 +16,26 @@ get_header(); ?>
                 <?php get_template_part( 'partials/teammate' ); ?>
                 <?php $teammate_slug = $post->post_name; ?>
 
-			<?php endwhile; ?>
+                <?php if( get_field('show_recent')  ) { ?>
+                <section class="section g g-2up cf">
+                    <h2 class="ghead <?php echo $teammate_slug; ?>"><span>Recent Projects</span></h2>
+                    <?php 
+                        $args = array( 
+                            'posts_per_page'    => 6,
+                            'tag'     => $teammate_slug
+                        );
+                        $featposts = get_posts( $args );
+                        ?>
+                        <?php foreach ( $featposts as $post ) : ?>
+                            <?php setup_postdata( $post ); ?>
+                            <?php include(locate_template('partials/tworow.php' )); ?>
+                        <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                </section>
+                <?php } ?>
 
-            <section class="section g g-3up cf">
-                <h2 class="ghead"><span>Recent Projects</span></h2>
-                <?php 
-                    $args = array( 
-                        'posts_per_page'    => 9,
-                        'tag'     => $teammate_slug
-                    );
-                    $featposts = get_posts( $args );
-                    ?>
-                    <?php foreach ( $featposts as $post ) : ?>
-                        <?php setup_postdata( $post ); ?>
-                        <?php include(locate_template('partials/threerow.php' )); ?>
-                    <?php endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-            </section>
+
+            <?php endwhile; ?>
 
 
 		</div><!-- #content -->

@@ -39,10 +39,10 @@ add_action( 'after_setup_theme', 'teameight_setup' );
 function teameight_scripts_styles() {
 
 	// Loads JavaScript file with functionality specific to Team Eight.
-	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
+	wp_enqueue_script( 'teameight-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2015-08-28', true );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-1-28' );
+	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2015-08-28' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'teameight-ie', get_template_directory_uri() . '/css/ie.css', array( 'teameight-style' ), '2013-07-18' );
@@ -149,3 +149,18 @@ function create_teammates_teameight()
     ));
 }
 add_action('init', 'create_teammates_teameight'); // Add our Custom Post Type
+
+/**
+ * Outputs images with classes from ACF feilds on single posts
+ *
+ * 
+ */
+function teameight_singles_images($att_id, $size, $class) {
+
+    if($class == "web-page"){
+        echo "<div class='web-page-head'><span></span><span></span><span></span></div>";
+    }
+
+    echo wp_get_attachment_image( $att_id, $size, false, array( 'class' => $class ) );
+
+}

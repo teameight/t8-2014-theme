@@ -7,6 +7,12 @@ img, video, object {
 	width: 100%;
 	height: auto;
 }
+@media all and (min-width: $bp-large) {
+	.freeform img.gif {
+		width:auto;
+		cursor:progress;
+	}
+}
 
 iframe {
 	margin-bottom: $space;

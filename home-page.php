@@ -41,7 +41,7 @@ get_header(); ?>
 
 	<section class="section g g-3up cf">
 	    <a class="anchor" name="other"></a>
-		<h2 class="ghead"><span>Other Things We're Proud Of</span></h2>
+		<h2 class="ghead"><span>More Things We're Proud Of</span></h2>
 		<?php 
 		// Most recent 9 STICKY POSTS ONLY from the Other Things category
 		$args = array( 

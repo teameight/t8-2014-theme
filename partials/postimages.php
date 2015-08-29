@@ -11,16 +11,18 @@
 		<?php  
 			$attachment_id = get_sub_field('image');
 			$size = "large";
-			 
-			echo wp_get_attachment_image( $attachment_id, $size );
+			$class = get_sub_field('image_class');
+			
+			teameight_singles_images($attachment_id, $size, $class);
 		?>
 	<?php elseif(get_row_layout() == "image_and_text"): ?>
 	<div class="imgdesc cf">
 		<?php  
 			$attachment_id = get_sub_field('image');
 			$size = "large";
+			$class = get_sub_field('image_class');
 			 
-			echo wp_get_attachment_image( $attachment_id, $size );
+			teameight_singles_images($attachment_id, $size, $class);
 		?>
 		<div class="desc">
 			<div class="text">
@@ -41,20 +43,26 @@
 		<div class="gi">
 			<?php  
 				$attachment_id = get_sub_field('image_1');
-				echo wp_get_attachment_image( $attachment_id, $imgsize );
+				$class = get_sub_field('image_1_class');
+			 
+				teameight_singles_images($attachment_id, $size, $class);
 			?>
 		</div>
 		<div class="gi">
 			<?php  
 				$attachment_id = get_sub_field('image_2');
-				echo wp_get_attachment_image( $attachment_id, $imgsize );
+				$class = get_sub_field('image_2_class');
+			 
+				teameight_singles_images($attachment_id, $size, $class);
 			?>
 		</div>
 		<?php if( $row == 3 ){ ?>
 		<div class="gi">
 			<?php  
 				$attachment_id = get_sub_field('image_3');
-				echo wp_get_attachment_image( $attachment_id, $imgsize );
+				$class = get_sub_field('image_3_class');
+			 
+				teameight_singles_images($attachment_id, $size, $class);
 			?>
 		</div>
 		<?php } ?>

@@ -23,5 +23,21 @@
 		$thisparent.toggleClass('open');
 	});
 
+	$(".gif-animate").hover(  
+      function()
+        {
+          var src = $(this).attr("src");
+          $(this).fadeTo(300,0.3, function() {
+            $(this).attr("src", src.replace(/\.png$/i, ".gif"));
+          }).fadeTo(100,1);     
+        },
+        function()
+        {
+          var src = $(this).attr("src");
+          $(this).fadeTo(300,0.3, function() {
+            $(this).attr("src", src.replace(/\.gif$/i, ".png"));
+          }).fadeTo(100,1); 
+        });
+
 
 } )( jQuery );

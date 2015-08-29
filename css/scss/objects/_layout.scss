@@ -47,7 +47,7 @@
 .section {
 	overflow: hidden;
 	margin: $padpx-double 0;
-	padding: $padpx-double 0.875%;
+	padding: $padpx-double 0.875% 0;
 	background: $creme-light-2;
 	overflow: visible;
 	position: relative;
@@ -56,7 +56,7 @@
 		margin: $padpx-quad 0;
 	}
 	@media all and (min-width: $bp-full) {
-	padding: $padpx-double $padpx-half;
+	padding: $padpx-double $padpx-half 0;
 	}
 
 	> a.more {
@@ -70,7 +70,7 @@
 /* Grid Item */
 .gi {
 	padding:0;
-	margin: 0 1% 2.12%;
+	margin: 0 1% 24px;
 	position: relative;
 	
 	img {
@@ -81,7 +81,7 @@
 		float: left;
 	}
 	@media all and (min-width: $bp-full) {
-		margin: 0 $padpx-half $padpx;
+		margin: 0 1% 2.12%;
 	}
 
 }
@@ -106,7 +106,7 @@
 	}
 	@media all and (min-width: $bp-full) {
 		> .gi {
-			width: 460px;
+			// width: 460px;
 		}
 	}
 }
@@ -151,7 +151,7 @@
 	}
 	@media all and (min-width: $bp-full) {
 		> .gi {
-			width: 300px;
+			// width: 300px;
 		}
 	}
 

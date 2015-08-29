@@ -10,7 +10,7 @@
 
 .section .ghead {
 	position: absolute;
-	top: -24px;
+	top: -50px;
 	width: 100%;
 	left: 0;
 }
@@ -21,7 +21,7 @@
 	line-height: 45px;
 	height: 38px;
 	@media all and (min-width: $bp-full) {
-		padding-left: $padpx;
+		padding-left: 23px;
 	}
 }
 .ghead:before {
@@ -73,7 +73,7 @@
 	}
 
 	@media all and (min-width: $bp-large) {
-		padding: 10% 10% 7%;
+		padding: 10% 10% 8%;
 	}
 
 	a {
